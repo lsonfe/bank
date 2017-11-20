@@ -1,0 +1,46 @@
+<!--包含头部文件-->
+{include file="public/header" /}
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 商品管理 <span class="c-gray en">&gt;</span> 商品列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+	<div class="mt-20">
+		<table class="table table-border table-bordered table-bg table-hover table-sort">
+			<thead>
+				<tr class="text-c">
+					<th width="20">ID</th>
+					<th width="30">分类</th>
+					<th width="30">信息主题</th>
+					<th width="50">联系人</th>
+					<th width="30">性别</th>
+					<th width="50">单位</th>
+					<th width="30">年龄</th>
+					<th width="50">联系电话</th>
+					<th width="50">信息内容</th>
+					<th width="30">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				{volist name="$local" id="vo"}
+				<tr class="text-c">
+					<td>{$vo.id}</td>
+					<td>{$vo.category}</td>
+					<td>{$vo.theme}</td>
+					<td>{$vo.contacts}</td>
+					<td>{$vo.sex}</td>	
+					<td>{$vo.company}</td>
+					<td>{$vo.age}</td>
+					<td>{$vo.tel}</td>
+					<td>{$vo.content|mb_substr=0,10,'utf-8'}</td>
+					<td class="td-manage">
+						<a style="text-decoration:none" class="ml-5" onClick="o2o_del('{:url('feedback/del',['id'=>$vo.id])}')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a>
+					</td>
+				</tr>
+				{/volist}
+			</tbody>
+		</table>
+	</div>
+</div>
+<!--包含尾部文件-->
+{include file="public/footer" /}
+	</body>
+</html>

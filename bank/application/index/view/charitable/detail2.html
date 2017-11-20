@@ -1,0 +1,249 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="__STATIC__/index/css/index.css" />
+    <script type="text/javascript" src="__STATIC__/index/js/jquery-1.7.2.min.js"></script>
+    <style type="text/css">
+        /*-----主要内容  s ----*/
+        #main {
+            width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+        }
+        /*-慈善项目  s--*/
+        #csxm_left {
+            width: 100%;
+            float: left;
+            margin-bottom: 10px;
+            border: solid 1px #dbdbdb;
+        }
+
+        .location {
+            width: 100%;
+            height: 30px;
+            background-color: #f9f9f9;
+        }
+
+        .location p {
+            padding-left: 5px;
+            padding-top: 8px;
+            font-size: 12px;
+            color: #444;
+        }
+
+        /*具体慈善内容*/
+        .cs_content {
+            width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .content_title {
+            font-size: 18px;
+            text-align: center;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .con_xx {
+            width: 900px;
+            height: 30px;
+            border-bottom: dashed 1px #dbdbdb;
+        }
+
+        .con_xx p {
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            padding-top: 7px;
+        }
+
+        .p1 {
+            padding-top: 15px;
+            font-size: 12px;
+            color: #444;
+            line-height: 22px;
+        }
+
+        /*-慈善项目  e--*/
+
+        /*-右边  s--*/
+        #csxm_right {
+            width: 230px;
+            height: 600px;
+            float: right;
+        }
+
+        .table_top {
+            border-bottom: solid 1px #dcdcdc;
+        }
+
+        .xw_hover {
+            background-color: #ff9300;
+            font-size: 13px;
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .xw_now {
+            font-size: 13px;
+            color: #bbbbbb;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .list1 {
+            width: 218px;
+            height: 28px;
+            margin-left: auto;
+            margin-right: auto;
+            border-bottom: dashed 1px #ccc;
+        }
+
+        .list1 a {
+            font-size: 12px;
+            color: #444444;
+            text-decoration: none;
+        }
+
+        .list1 a:hover {
+            font-size: 12px;
+            color: #f00;
+        }
+        /*新闻动态  e*/
+        /*委托服务动态   s*/
+        .zxxq_top {
+            border-bottom: solid 1px #dbdbdb;
+        }
+
+        .wtfw {
+            width: 228px;
+            height: 209px;
+            border: solid 1px #dbdbdb;
+            float: right;
+        }
+
+        .list_box {
+            width: 218px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .list3 {
+            width: 208px;
+            height: 31px;
+            margin-left: auto;
+            margin-right: auto;
+            border-bottom: dashed 1px #ccc;
+        }
+
+        .list3 a,.list3 {
+            font-size: 12px;
+            color: #444444;
+            text-decoration: none;
+        }
+
+        .list3 a:hover {
+            font-size: 12px;
+            color: #f00;
+        }
+
+        .lm_title {
+            font-size: 16px;
+            color: #c75f02;
+            font-weight: 700;
+        }
+
+        .more a {
+            font-size: 12px;
+            color: #444444;
+        }
+        /*委托服务动态   e*/
+        /*-右边  e--*/
+    </style>
+    <script type="text/javascript">
+        //下载附件
+        function downloadNotice(action) {
+            document.mainform.action = action;
+            document.mainform.submit();
+        }
+    </script>
+</head>
+<body>
+<div id="container">
+    <!--tops-->
+    <script type="text/javascript">
+        //登录
+        function tologin() {
+            var url = parent.window.location.href;
+            if (url.indexOf("frontWelcome") > 0) {
+                url = "/timebank/welcome/front/mybank.action";
+            }
+            top.window.location = "/timebank/welcome/frontLogin.action?returnUrl=" + url;
+        }
+        //跳转
+        function goAction(action, target){
+            if(target == 1){
+                window.open(action);
+            }else{
+                top.window.location.href = action;
+            }
+        }
+        //显示手机二维码
+
+        function showQRCode(){
+            $("#code").show();
+        }
+        //隐藏手机二维码
+
+        function hideQRCode(){
+            $("#code").hide();
+        }
+    </script>
+    {include file="public/header"}
+    <!--主要内容区    s--->
+    <div id="main" style="height: 800px;">
+        <!--csxm_left    s--->
+        <div id="csxm_left">
+            <form action="" method="post" id="mainform" name="mainform">
+                <input type="hidden" name="articleId" id="articleId"
+                       value="619" />
+            </form>
+            <div class="location">
+                <p>当前位置：首页-活动报道</p>
+            </div>
+
+            <div class="cs_content">
+                <p class="content_title">{$data.title}</p>
+                <div class="con_xx">
+                    <p>发布时间：{$data.time|date="Y-m-d",###}</p>
+                </div>
+                {$data.content}
+
+            </div>
+        </div>
+        <!--csxm_left    e--->
+
+
+    </div>
+    <!--主要内容区    e--->
+   {include file="public/footer"}
+    <script>
+        if(screen.width>1100){
+
+            //document.getElementById("foot").style.width=screen.width-21;
+        }
+    </script>
+    <!--版权信息    e--->		<!--版权信息    e--->
+</div>
+<script type="text/javascript">
+    jQuery("#sub_menu").hide();
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!--包含头部文件-->
+{include file="public/header" /}
+<div class="cl pd-5 bg-1 bk-gray mt-20"> 添加商品分类</div>
+<article class="page-container">
+	<form class="form form-horizontal" id="form-article-add" method="post" action="{:url('categorys/add')}">
+	基本信息：
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>商品分类名：</label>
+			<div class="formControls col-xs-8 col-sm-3">
+				<input type="text" class="input-text" value="" placeholder="" id="" name="name">
+			</div>
+		</div>
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+				<button onClick="article_save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 添加</button>	
+			</div>
+		</div>
+	</form>
+</article>
+<!--包含头部文件-->
+{include file="public/footer" /}
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/ueditor/1.4.3/ueditor.config.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/js/image.js"></script>
+<script>
+$(function(){
+	var ue = UE.getEditor('editor');
+	var ue = UE.getEditor('editor2');
+});
+/**定义页面全局变量**/
+var SCOPE = {
+	'uploadify_swf' : '__STATIC__/admin/uploadify/uploadify.swf',
+	'image_upload' : '{:url('api/image/upload')}',
+};
+</script>
+</body>
+</html>

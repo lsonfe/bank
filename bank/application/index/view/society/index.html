@@ -1,0 +1,94 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>社会慈善基金介绍</title>
+    <link type="text/css" rel="stylesheet" href="__STATIC__/index/css/index.css" />
+    <script type="text/javascript" src="__STATIC__/index/js/jquery-1.7.2.min.js"></script>
+
+
+<body>
+<div id="container">
+    <!--tops-->
+    <script type="text/javascript">
+        //登录
+        function tologin() {
+            var url = parent.window.location.href;
+            if (url.indexOf("frontWelcome") > 0) {
+                url = "/timebank/welcome/front/mybank.action";
+            }
+            top.window.location = "/timebank/welcome/frontLogin.action?returnUrl=" + url;
+        }
+        //跳转
+        function goAction(action, target){
+            if(target == 1){
+                window.open(action);
+            }else{
+                top.window.location.href = action;
+            }
+        }
+        //显示手机二维码
+
+        function showQRCode(){
+            $("#code").show();
+        }
+        //隐藏手机二维码
+
+        function hideQRCode(){
+            $("#code").hide();
+        }
+    </script>
+   
+{include file="public/header"}
+
+    <!--主要内容区    s--->
+    <div id="main" style="height: 800px;">
+        <div class="fenl">
+            <div class="qbfl_bt">社会慈善基金</div>
+            <ul class="gyjj_ej">
+                <li><a href="{:url('society/index')}">基金介绍</a></li>
+                <li><a href="{:url('society/moneyopen')}">财务公开</a></li>
+                <li><a href="{:url('society/notice')}">公示与报告</a></li>
+                <li><a href="{:url('society/contact')}">联系我们</a></li>
+            </ul>
+
+        </div>
+
+        <!--csxm_left    s--->
+        <div class="gyjj_list">
+
+            <div class="location">
+                <p>当前位置：首页&nbsp;>>&nbsp;公益基金&nbsp;>>&nbsp;社会慈善基金&nbsp;>>&nbsp;基金介绍&nbsp;</p>
+            </div>
+
+            <div class="cs_content">
+                <p class="content_title">社会慈善基金介绍</p>
+                <div class="con_xx">
+                    <p>发布时间：2016-04-12</p>
+                </div>
+                <p class="p1" style="padding-bottom: 19px;"></p><p class="MsoNormal">
+                <span style="background:#FFFFFF;color:#444444;line-height:2;font-family:Microsoft YaHei;font-size:16px;font-style:normal;font-weight:normal;"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 社会慈善基金</span></span><span style="background:#FFFFFF;color:#444444;line-height:2;font-family:Microsoft YaHei;font-size:16px;font-style:normal;font-weight:normal;"><span>是</span></span><span style="background:#FFFFFF;color:#444444;font-family:微软雅黑;font-size:12pt;font-style:normal;font-weight:normal;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">由</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">“南沙时间银行”运营商管理和审核，物资来源于</span></span><span style="background:#FFFFFF;color:#444444;line-height:2;font-family:Microsoft YaHei;font-size:16px;font-style:normal;font-weight:normal;"><span>个人会员，团体会员</span></span><span style="background:#FFFFFF;color:#444444;font-family:微软雅黑;font-size:12pt;font-style:normal;font-weight:normal;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">在</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">“南沙时间银行”平台积累无偿捐赠的“时间币”以及</span></span><span style="background:#FFFFFF;color:#444444;line-height:2;font-family:Microsoft YaHei;font-size:16px;font-style:normal;font-weight:normal;"><span>个人，企业</span></span><span style="background:#FFFFFF;color:#444444;line-height:2;font-family:Microsoft YaHei;font-size:16px;font-style:normal;font-weight:normal;"><span>的捐赠</span></span><span style="background:#FFFFFF;color:#444444;line-height:2;font-family:Microsoft YaHei;font-size:16px;font-style:normal;font-weight:normal;"><span>。</span></span><span style="background:#FFFFFF;color:#444444;font-family:微软雅黑;font-size:12pt;font-style:normal;font-weight:normal;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">社会上有需要的团体或群众个人可通过</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">“南沙时间银行”平台申请基金帮扶，经审核通过后，均可成为基金的帮扶对象。为确保基金运行公开、公平、公正，基金的筹集、使用情况将同步在“南沙时间银行”网页向社会公开，接受广大群众的监督。</span></span><span style="background:#FFFFFF;color:#444444;font-family:微软雅黑;font-size:12pt;font-style:normal;font-weight:normal;"></span>
+            </p>
+                <!--EndFragment--><br><br><p></p>
+            </div>
+        </div>
+        <!--csxm_left    e--->
+
+
+    </div>
+    <!--主要内容区    e--->
+    {include file="public/footer"}
+    <script>
+        if(screen.width>1100){
+
+            //document.getElementById("foot").style.width=screen.width-21;
+        }
+    </script>
+    <!--版权信息    e--->		<!--版权信息    e--->
+</div>
+<script type="text/javascript">
+    jQuery("#sub_menu").hide();
+</script>
+</body>
+</html>

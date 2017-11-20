@@ -1,0 +1,458 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>时间银行--关于我们</title>
+    <link type="text/css" rel="stylesheet" href="__STATIC__/index/css/index.css" />
+    <link type="text/css" href="__STATIC__/index/css/list.css" rel="stylesheet" />
+    <script type="text/javascript" src="__STATIC__/index/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/index/js/javascript.js"></script>
+    <style type="text/css">
+
+        /*-----主要内容  s ----*/
+        #main{ width:1100px; margin-left:auto; margin-right:auto; margin-top:10px;}
+        /*-社区动态  s--*/
+        #csxm_left{ width:1098px;  float:left; margin-bottom:10px; border:solid 1px #dbdbdb;}
+        .location{ height:30px; background-color:#f9f9f9;}
+        .location p{ padding-left:5px; padding-top:8px; font-size:12px; color:#444;}
+
+        .csxm_title{ margin-left:auto; margin-right:auto; height:30px; border-bottom:solid 2px #ff9300; margin-bottom:10px;}
+        .csxm_title p{ font-size:16px; color:#c75f02; padding-left:10px; padding-top:7px; font-family:"Microsoft Yahei Font"; font-weight:700;}
+
+        .cs_list{ width:998px; height:175px; margin-top:5px; margin-left:auto; margin-right:auto; border-bottom:dashed 1px #dbdbdb;}
+        .list_title{ font-size:18px;}
+        .jj_cs{ font-size:12px; line-height:25px; color:#444; padding-top:5px;}
+        .jj_cs a{ color:#FF0000;}
+        .sjxx{ font-size:12px; color:#999; padding-top:15px;}
+
+        /*具体社区动态*/
+        .csxm_1{ width:404px; float:left;}
+        .csxm_2{ width:404px; float:right;}
+        .cs_title{ font-size:14px; color:#c75f02; padding-top:20px;}
+        .cssj{ font-size:12px; color:#444; line-height:20px; padding-top:15px;}
+        .cssj a{ color:#f00;}
+
+        /*列表分页*/
+        .fen_page{ height:30px; width:840px; margin-left:auto; margin-right:auto;  margin-top:20px; margin-bottom:20px;}
+        /*-社区动态  e--*/
+
+        /*-右边  s--*/
+        #csxm_right{ width:230px; float:right;}
+
+    </style>
+    <script type="text/javascript">
+        parent.jQuery("#yc_menu1").hide();
+        function goDetail(noticeId) {
+            window.open("/timebank/welcome/frontWelcome.action?noticeId="+noticeId,'新闻详细','');
+        }
+    </script>
+</head>
+
+<body>
+<div id="container">
+    <!--tops-->
+    <script type="text/javascript">
+        //登录
+        function tologin() {
+            var url = parent.window.location.href;
+            if (url.indexOf("frontWelcome") > 0) {
+                url = "/timebank/welcome/front/mybank.action";
+            }
+            top.window.location = "/timebank/welcome/frontLogin.action?returnUrl=" + url;
+        }
+        //跳转
+        function goAction(action, target){
+            if(target == 1){
+                window.open(action);
+            }else{
+                top.window.location.href = action;
+            }
+        }
+        //显示手机二维码
+
+        function showQRCode(){
+            $("#code").show();
+        }
+        //隐藏手机二维码
+
+        function hideQRCode(){
+            $("#code").hide();
+        }
+    </script>
+    {include file="public/header"}
+    <!--主要内容区    s--->
+    <div id="main">
+
+        <!--csxm_left    s--->
+        <div id="csxm_left" style="margin-bottom:10px;">
+            <div class="csxm_title"><p>关于我们</p></div>
+            <p align="center" style="padding-bottom:12px;">
+
+                <!--一般栏目-->
+            <div 0 >
+                <div style="text-align:center;">
+                    <img src="http://www.nstimebank.org.cn/images/yxyg-banner.jpg" alt="" /><span style="line-height:1.5;"></span>
+                </div>
+            </div>
+            </p>
+            <!--慈善列表  s-->
+            <div class="cs_list">
+                <!--具体项目  s-->
+                <div class="csxm_1">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="179" height="163">
+                                <a href="about1.html" target="_blank">
+                                    <img src="/timebank/upload/articlePic/20161101142002.jpg" width="164" height="143" /></a></td>
+                            <td valign="top">
+                                <p class="cs_title">南沙时间银行简介</p>
+                                <p class="cssj">
+
+
+                                    南沙时间银行简介  <a href="about1.html"
+                                                 target="_blank">[详细]</a>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="csxm_2">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="179" height="163">
+                                <a href="about2.html" target="_blank">
+                                    <img src="/timebank/upload/articlePic/20171031101513.jpg" width="164" height="143" /></a></td>
+                            <td valign="top">
+                                <p class="cs_title">关于其他说明</p>
+                                <p class="cssj">
+
+
+                                    关于时间币总量说明；关于现有会员量情况的说明。  <a href="about2.html"
+                                                                target="_blank">[详细]</a>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!--具体项目  e-->
+            </div>
+
+            <div class="cs_list">
+                <!--具体项目  s-->
+                <div class="csxm_1">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="179" height="163"><a href="about3.html" target="_blank"><img src="/timebank/upload/articlePic/20171031101406.jpg" width="164" height="143" /></a></td>
+                            <td valign="top">
+                                <p class="cs_title">
+                                    南沙时间银行外界捐助物资的说明</p>
+                                <p class="cssj">
+
+
+                                    南沙时间银行仅作为社区公共服务的支撑平台，本身并不承接任何单位和个人的捐赠。 <a href="about3.html"
+                                                                              target="_blank">[详细]</a>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="csxm_2">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="179" height="163"><a href="about4.html" target="_blank"><img src="/timebank/upload/articlePic/20170816095649.jpg" width="164" height="143" /></a></td>
+                            <td valign="top">
+                                <p class="cs_title">
+                                    南沙时间银行团体会员注册流程</p>
+                                <p class="cssj">
+
+
+                                    南沙时间银行团体会员注册流程 <a href="about4.html"
+                                                      target="_blank">[详细]</a>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!--具体项目  e-->
+            </div>
+
+            <div class="cs_list">
+                <!--具体项目  s-->
+                <div class="csxm_1">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="179" height="163"><a href="about5.html" target="_blank"><img src="/timebank/upload/articlePic/20161111173550.png" width="164" height="143" /></a></td>
+                            <td valign="top">
+                                <p class="cs_title">
+                                    南沙时间银行运营中心</p>
+                                <p class="cssj">
+                                    欢迎进入南沙时间银行运营中心展示厅~~ <a href="about5.html"
+                                                           target="_blank">[详细]</a>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="csxm_2">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="179" height="163"><a href="about6.html" target="_blank"><img src="/timebank/upload/articlePic/20161102135936.jpg" width="164" height="143" /></a></td>
+                            <td valign="top">
+                                <p class="cs_title">
+                                    南沙时间银行会员在淘宝代购流程</p>
+                                <p class="cssj">
+                                    南沙时间银行会员在淘宝代购流程 <a href="about6.html"
+                                                       target="_blank">[详细]</a>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!--具体项目  e-->
+            </div>
+
+            <div class="cs_list">
+                <!--具体项目  s-->
+                <div class="csxm_1">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody><tr>
+                            <td width="179" height="163">
+                                <a href="about7.html" target="_blank">
+                                    <img src="/timebank/upload/articlePic/20161101161558.jpg" width="164" height="143"></a></td>
+                            <td valign="top">
+                                <p class="cs_title">南沙时间银行会员兑换礼品流程</p>
+                                <p class="cssj">
+
+
+                                    南沙时间银行会员兑换礼品的方式主要通过：南沙时间银行网页兑换或APP兑换。兑换流程请戳→  <a href="about7.html" target="_blank">[详细]</a>
+                                </p>
+                            </td>
+                        </tr>
+                        </tbody></table>
+                </div>
+                <div class="csxm_2">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody><tr>
+                            <td width="179" height="163">
+                                <a href="about8.html" target="_blank">
+                                    <img src="/timebank/upload/articlePic/20161101161724.jpg" width="164" height="143"></a></td>
+                            <td valign="top">
+                                <p class="cs_title">南沙时间银行会员服务评价流程</p>
+                                <p class="cssj">
+
+
+                                    南沙时间银行会员服务评价流程  <a href="about8.html" target="_blank">[详细]</a>
+                                </p>
+                            </td>
+                        </tr>
+                        </tbody></table>
+                </div>
+                <!--具体项目  e-->
+            </div>
+
+            <div class="cs_list">
+                <!--具体项目  s-->
+                <div class="csxm_1">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody><tr>
+                            <td width="179" height="163"><a href="about9.html" target="_blank"><img src="/timebank/upload/articlePic/20161101155830.jpg" width="164" height="143"></a></td>
+                            <td valign="top">
+                                <p class="cs_title">
+                                    南沙时间银行会员承接服务流程</p>
+                                <p class="cssj">
+
+
+                                    南沙时间银行注册会员可以通过南沙时间银行平台进行提交承接他人委托的服务。 <a href="about9.html" target="_blank">[详细]</a>
+                                </p>
+                            </td>
+                        </tr>
+                        </tbody></table>
+                </div>
+                <div class="csxm_2">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody><tr>
+                            <td width="179" height="163"><a href="about10.html" target="_blank"><img src="/timebank/upload/articlePic/20161101160009.jpg" width="164" height="143"></a></td>
+                            <td valign="top">
+                                <p class="cs_title">
+                                    南沙时间银行会员发布需求流程</p>
+                                <p class="cssj">
+
+
+                                    南沙时间银行会员发布需求流程 <a href="about10.html" target="_blank">[详细]</a>
+                                </p>
+                            </td>
+                        </tr>
+                        </tbody></table>
+                </div>
+                <!--具体项目  e-->
+            </div>
+
+            <div class="cs_list">
+                <!--具体项目  s-->
+                <div class="csxm_1">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody><tr>
+                            <td width="179" height="163"><a href="about11.html" target="_blank"><img src="/timebank/upload/articlePic/20161101160451.jpg" width="164" height="143"></a></td>
+                            <td valign="top">
+                                <p class="cs_title">
+                                    南沙时间银行时间币的说明</p>
+                                <p class="cssj">
+                                    南沙时间银行时间币的说明 <a href="about11.html" target="_blank">[详细]</a>
+                                </p>
+                            </td>
+                        </tr>
+                        </tbody></table>
+                </div>
+                <div class="csxm_2">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody><tr>
+                            <td width="179" height="163"><a href="about12.html" target="_blank"><img src="/timebank/upload/articlePic/20160414203527.jpg" width="164" height="143"></a></td>
+                            <td valign="top">
+                                <p class="cs_title">
+                                    南沙时间银行会员注册流程</p>
+                                <p class="cssj">
+                                    南沙时间银行采用注册会员制度，参与南沙时间银行的一切活动必须是注册会员，注册会员必须是具有完全民事行为能力的自然人。 <a href="about12.html" target="_blank">[详细]</a>
+                                </p>
+                            </td>
+                        </tr>
+                        </tbody></table>
+                </div>
+                <!--具体项目  e-->
+            </div>
+
+            <div class="cs_list">
+                <!--具体项目  s-->
+                <div class="csxm_1">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody><tr>
+                            <td width="179" height="163">
+                                <a href="about13.html" target="_blank">
+                                    <img src="/timebank/upload/articlePic/20160414222659.jpg" width="164" height="143"></a></td>
+                            <td valign="top">
+                                <p class="cs_title">“时间币”的产生及应用流程</p>
+                                <p class="cssj">
+
+
+                                    “时间币”的产生及应用流程  <a href="about13.html" target="_blank">[详细]</a>
+                                </p>
+                            </td>
+                        </tr>
+                        </tbody></table>
+                </div>
+                <div class="csxm_2">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody><tr>
+                            <td width="179" height="163">
+                                <a href="about14.html" target="_blank">
+                                    <img src="/timebank/upload/articlePic/20160414203852.jpg" width="164" height="143"></a></td>
+                            <td valign="top">
+                                <p class="cs_title">南沙时间银行服务对接流程</p>
+                                <p class="cssj">
+
+
+                                    南沙时间银行服务对接流程  <a href="about14.html" target="_blank">[详细]</a>
+                                </p>
+                            </td>
+                        </tr>
+                        </tbody></table>
+                </div>
+                <!--具体项目  e-->
+            </div>
+
+            <div class="cs_list">
+                <!--具体项目  s-->
+                <div class="csxm_1">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody><tr>
+                            <td width="179" height="163"><a href="about15.html" target="_blank"><img src="/timebank/upload/articlePic/20161101114032.jpg" width="164" height="143"></a></td>
+                            <td valign="top">
+                                <p class="cs_title">
+                                    关于我们</p>
+                                <p class="cssj">
+
+
+                                    “南沙时间银行”是在南沙区政府支持下，由区民政局实施，采用购买服务方式，由南沙国际技术合作服务中心负责建设和运营的一项社区互助服务...... <a href="about15.html" target="_blank">[详细]</a>
+                                </p>
+                            </td>
+                        </tr>
+                        </tbody></table>
+                </div>
+                <!--具体项目  e-->
+            </div>
+
+
+            <!--慈善列表  e-->
+
+
+            <!--分页  s-->
+            <div class="fen_page">
+                <form action="" id="mainform" name="mainform" method="post">
+                    <input type="hidden" name="pageSize" value="6"/>
+                </form>
+                <script>
+                    //验证跳转文本框
+                    function go(pageNo) {
+                        var num = pageNo;
+                        var totalNum = document.getElementById("totalPage").value;
+                        if (num == "0") {
+                            num = "1";
+                        }
+                        num = parseInt(num);
+                        totalNum = parseInt(totalNum);
+                        if (num > totalNum) {
+                            alert("不能超过最大分页数!");
+                            return;
+                        }
+                        changePage('indexArtByPro.action?programaId=82&pageNo=' + num);
+                    }
+                    //切换列表页面时提交查询表单以便跳转的页面中能附带原来的查询条件
+
+                    function changePage(action) {
+                        document.mainform.action = action;
+                        document.mainform.submit();
+                    }
+                </script>
+                <form name="pageform" method="post">
+                    <table border="0" cellpadding="0" cellspacing="0" height="35">
+                        <tr>
+                            <td width="120"><p style="font-size:12px; color:#444;">共找出<span style="color: #f00;">15</span>条记录</p></td>
+                            <td width="60" height="30" align="center" class="page_y1" valign="top">
+                                <a><p>上一页</p></a>
+                            </td>
+
+
+                            <td width="30" align="center" class="page_y" style="background-color:#ff9300;" valign="top"><a href="javascript:go('0');"><p class="currentPage" style="height:22px;">1</p></a></td>
+
+
+                            <td width="30" align="center" class="page_y" valign="top"><a href="javascript:go('2');"><p>2</p></a></td>
+                            <td width="30" align="center" class="page_y" valign="top"><a href="javascript:go('3');"><p>3</p></a></td>
+                            <td width="60" align="center" valign="top" class="page_y2">
+                                <a href="javascript:changePage('indexArtByPro.action?programaId=82&&pageNo=2')"><p>下一页</p></a>
+                            </td>
+                            <input type="hidden" id="totalPage" value="3" />
+                        </tr>
+                    </table>
+
+                </form>			</div>
+            <!--分页  e-->
+        </div>
+        <!--csxm_left    e--->
+
+    </div>
+</div>
+<!--主要内容区    e--->
+{include file="public/footer"}
+<script>
+    if(screen.width>1100){
+
+        //document.getElementById("foot").style.width=screen.width-21;
+    }
+</script>
+<!--版权信息    e--->	    <!--版权信息    e--->
+</div>
+<script type="text/javascript">
+    jQuery("#sub_menu").hide();
+</script>
+</body>
+</html>

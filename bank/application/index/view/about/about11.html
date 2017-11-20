@@ -1,0 +1,297 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="__STATIC__/index/css/index.css" />
+    <script type="text/javascript" src="__STATIC__/index/js/jquery-1.7.2.min.js"></script>
+    <style type="text/css">
+        /*-----主要内容  s ----*/
+        #main {
+            width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+        }
+        /*-慈善项目  s--*/
+        #csxm_left {
+            width: 100%;
+            float: left;
+            margin-bottom: 10px;
+            border: solid 1px #dbdbdb;
+        }
+
+        .location {
+            width: 100%;
+            height: 30px;
+            background-color: #f9f9f9;
+        }
+
+        .location p {
+            padding-left: 5px;
+            padding-top: 8px;
+            font-size: 12px;
+            color: #444;
+        }
+
+        /*具体慈善内容*/
+        .cs_content {
+            width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .content_title {
+            font-size: 18px;
+            text-align: center;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .con_xx {
+            width: 900px;
+            height: 30px;
+            border-bottom: dashed 1px #dbdbdb;
+        }
+
+        .con_xx p {
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            padding-top: 7px;
+        }
+
+        .p1 {
+            padding-top: 15px;
+            font-size: 12px;
+            color: #444;
+            line-height: 22px;
+        }
+
+        /*-慈善项目  e--*/
+
+        /*-右边  s--*/
+        #csxm_right {
+            width: 230px;
+            height: 600px;
+            float: right;
+        }
+
+        .table_top {
+            border-bottom: solid 1px #dcdcdc;
+        }
+
+        .xw_hover {
+            background-color: #ff9300;
+            font-size: 13px;
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .xw_now {
+            font-size: 13px;
+            color: #bbbbbb;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .list1 {
+            width: 218px;
+            height: 28px;
+            margin-left: auto;
+            margin-right: auto;
+            border-bottom: dashed 1px #ccc;
+        }
+
+        .list1 a {
+            font-size: 12px;
+            color: #444444;
+            text-decoration: none;
+        }
+
+        .list1 a:hover {
+            font-size: 12px;
+            color: #f00;
+        }
+        /*新闻动态  e*/
+        /*委托服务动态   s*/
+        .zxxq_top {
+            border-bottom: solid 1px #dbdbdb;
+        }
+
+        .wtfw {
+            width: 228px;
+            height: 209px;
+            border: solid 1px #dbdbdb;
+            float: right;
+        }
+
+        .list_box {
+            width: 218px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .list3 {
+            width: 208px;
+            height: 31px;
+            margin-left: auto;
+            margin-right: auto;
+            border-bottom: dashed 1px #ccc;
+        }
+
+        .list3 a,.list3 {
+            font-size: 12px;
+            color: #444444;
+            text-decoration: none;
+        }
+
+        .list3 a:hover {
+            font-size: 12px;
+            color: #f00;
+        }
+
+        .lm_title {
+            font-size: 16px;
+            color: #c75f02;
+            font-weight: 700;
+        }
+
+        .more a {
+            font-size: 12px;
+            color: #444444;
+        }
+        /*委托服务动态   e*/
+        /*-右边  e--*/
+    </style>
+    <script type="text/javascript">
+        //下载附件
+        function downloadNotice(action) {
+            document.mainform.action = action;
+            document.mainform.submit();
+        }
+    </script>
+</head>
+<body>
+<div id="container">
+    <!--tops-->
+    <script type="text/javascript">
+        //登录
+        function tologin() {
+            var url = parent.window.location.href;
+            if (url.indexOf("frontWelcome") > 0) {
+                url = "/timebank/welcome/front/mybank.action";
+            }
+            top.window.location = "/timebank/welcome/frontLogin.action?returnUrl=" + url;
+        }
+        //跳转
+        function goAction(action, target){
+            if(target == 1){
+                window.open(action);
+            }else{
+                top.window.location.href = action;
+            }
+        }
+        //显示手机二维码
+
+        function showQRCode(){
+            $("#code").show();
+        }
+        //隐藏手机二维码
+
+        function hideQRCode(){
+            $("#code").hide();
+        }
+    </script>
+    {include file="public/header"}
+
+    <!--主要内容区    s--->
+    <div id="main" style="height: 800px;">
+        <!--csxm_left    s--->
+        <div id="csxm_left">
+            <form action="" method="post" id="mainform" name="mainform">
+                <input type="hidden" name="articleId" id="articleId"
+                       value="358" />
+            </form>
+            <div class="location">
+                <p>当前位置：首页-关于我们</p>
+            </div>
+
+            <div class="cs_content">
+                <p class="content_title">南沙时间银行时间币的说明</p>
+                <div class="con_xx">
+                    <p>发布时间：2016-11-01</p>
+                </div>
+                <p class="p1" style="padding-bottom: 19px;"></p><p class="MsoNormal">
+                <b><span style="font-family:黑体;font-size:16pt;font-weight:bold;"></span></b>
+            </p>
+                <p align="justify" class="MsoNormal" style="text-align:justify;text-indent:32pt;">
+                    <span style="line-height:2;font-family:'Microsoft YaHei';font-size:16px;"><span> </span></span>
+                </p>
+                <p class="MsoNormal" align="justify" style="text-align:left;margin-left:0pt;text-indent:32pt;background:#FFFFFF;">
+                    <br>
+                </p>
+                <p class="MsoNormal" align="justify" style="text-align:left;margin-left:0pt;text-indent:32pt;background:#FFFFFF;">
+                    <b>南沙时间银行时间币（以下简称时间币）的定义</b><span style="line-height:1.5;">：是指会员在单位有效时间内运用智慧和劳动创造价值的基本计量单位，是南沙时间银行平台的计量单位及流通媒介。（</span><u>时间币的单位为枚，理论上1小时服务时间等于12枚时间币，即5分钟服务时间等于1枚时间币。</u><span style="line-height:1.5;">）</span>
+                </p>
+                <p class="MsoNormal" align="justify" style="margin-left:0.0000pt;text-indent:32.0000pt;text-align:justify;background:#FFFFFF;">
+                    <b><span>时间币的性质：</span></b><span>具备公益性和市场性，即会员通过南沙时间银行系统进行服务，其服务带有一定的公益性质，以市场价值为参照，但不能完全以市场价值为衡量。</span>
+                </p>
+                <p class="MsoNormal" align="justify" style="margin-left:0.0000pt;text-indent:32.0000pt;text-align:justify;background:#FFFFFF;">
+                    <b><span>时间币的价值：</span></b><span>时间币的货币价值参照广州市上年度（调整兑换标准年份的上年度）社会平均工资与最低工资标准的中间值产生。其折算比率为：</span>
+                </p>
+                <p class="MsoNormal" align="justify" style="margin-left:0.0000pt;text-indent:32.0000pt;text-align:justify;background:#FFFFFF;">
+                    <u>1时间币=（社会平均小时工资+最低标准小时工资）/2/12</u>
+                </p>
+                <p class="MsoNormal" align="justify" style="margin-left:0.0000pt;text-indent:32.0000pt;text-align:justify;background:#FFFFFF;">
+                    <span>时间币与人民币折算比率在南沙时间银行系统平台的</span>“关于我们”栏目进行公告，其折算比率每五年调整一次。
+                </p>
+                <p class="MsoNormal" align="justify" style="margin-left:0.0000pt;text-indent:32.0000pt;text-align:justify;background:#FFFFFF;">
+                    <b><span>现时间币兑换率：</span></b>2017年第4季的时间币跟人民币的兑换率为1:1.9。
+                </p>
+                <p class="MsoNormal" style="text-indent:37.9000pt;">
+                    <b><span>时间币的补充说明：</span></b><span>中国银行业监督管理委员会</span><span>（简称：</span><a href="https://baike.baidu.com/item/%E4%B8%AD%E5%9B%BD%E9%93%B6%E7%9B%91%E4%BC%9A"><span>中国银监会</span></a><span>或银监会）</span><span>成立于</span>2003年4月25日，是<a href="https://baike.baidu.com/item/%E5%9B%BD%E5%8A%A1%E9%99%A2/343590"><span>国务院</span></a><span>直属正部级事业单位。根据国务院授权，统一监督管理银行、金融资产管理公司、信托投资公司及其他存款类金融机构，维护银行业的合法、稳健运行</span><span>。</span>
+                </p>
+                <p class="MsoNormal" style="text-indent:35.4000pt;">
+                    时间币是时间银行模式所特有的计量单位，代表服务时间，南沙时间银行的时间币与所有时间银行的时间币相同，是服务时间的计量单位，与金融概念的货币无关。不属于中国银监会管理范畴，也不需要中国银监会认可。
+                </p>
+                <p class="MsoNormal" align="justify" style="margin-left:0.0000pt;text-indent:32.0000pt;text-align:justify;background:#FFFFFF;">
+                    <b></b>
+                </p>
+                <p class="MsoNormal">
+                    <br>
+                </p>
+                <p>
+                    <br>
+                </p>
+                <p style="text-align:left;">
+                    <br>
+                </p>
+                <p align="justify" class="MsoNormal" style="text-align:justify;text-indent:32pt;">
+                    <span style="font-family:仿宋_GB2312;font-size:16pt;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"></span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"></span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <!--EndFragment--><br><br><p></p>
+            </div>
+        </div>
+        <!--csxm_left    e--->
+
+
+    </div>
+    <!--主要内容区    e--->
+   {include file="public/footer"}
+    <script>
+        if(screen.width>1100){
+
+            //document.getElementById("foot").style.width=screen.width-21;
+        }
+    </script>
+    <!--版权信息    e--->		<!--版权信息    e--->
+</div>
+<script type="text/javascript">
+    jQuery("#sub_menu").hide();
+</script>
+</body>
+</html>

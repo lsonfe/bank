@@ -1,0 +1,446 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="__STATIC__/index/css/index.css" />
+    <script type="text/javascript" src="__STATIC__/index/js/jquery-1.7.2.min.js"></script>
+    <style type="text/css">
+        /*-----主要内容  s ----*/
+        #main {
+            width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+        }
+        /*-慈善项目  s--*/
+        #csxm_left {
+            width: 100%;
+            float: left;
+            margin-bottom: 10px;
+            border: solid 1px #dbdbdb;
+        }
+
+        .location {
+            width: 100%;
+            height: 30px;
+            background-color: #f9f9f9;
+        }
+
+        .location p {
+            padding-left: 5px;
+            padding-top: 8px;
+            font-size: 12px;
+            color: #444;
+        }
+
+        /*具体慈善内容*/
+        .cs_content {
+            width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .content_title {
+            font-size: 18px;
+            text-align: center;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .con_xx {
+            width: 900px;
+            height: 30px;
+            border-bottom: dashed 1px #dbdbdb;
+        }
+
+        .con_xx p {
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            padding-top: 7px;
+        }
+
+        .p1 {
+            padding-top: 15px;
+            font-size: 12px;
+            color: #444;
+            line-height: 22px;
+        }
+
+        /*-慈善项目  e--*/
+
+        /*-右边  s--*/
+        #csxm_right {
+            width: 230px;
+            height: 600px;
+            float: right;
+        }
+
+        .table_top {
+            border-bottom: solid 1px #dcdcdc;
+        }
+
+        .xw_hover {
+            background-color: #ff9300;
+            font-size: 13px;
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .xw_now {
+            font-size: 13px;
+            color: #bbbbbb;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .list1 {
+            width: 218px;
+            height: 28px;
+            margin-left: auto;
+            margin-right: auto;
+            border-bottom: dashed 1px #ccc;
+        }
+
+        .list1 a {
+            font-size: 12px;
+            color: #444444;
+            text-decoration: none;
+        }
+
+        .list1 a:hover {
+            font-size: 12px;
+            color: #f00;
+        }
+        /*新闻动态  e*/
+        /*委托服务动态   s*/
+        .zxxq_top {
+            border-bottom: solid 1px #dbdbdb;
+        }
+
+        .wtfw {
+            width: 228px;
+            height: 209px;
+            border: solid 1px #dbdbdb;
+            float: right;
+        }
+
+        .list_box {
+            width: 218px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .list3 {
+            width: 208px;
+            height: 31px;
+            margin-left: auto;
+            margin-right: auto;
+            border-bottom: dashed 1px #ccc;
+        }
+
+        .list3 a,.list3 {
+            font-size: 12px;
+            color: #444444;
+            text-decoration: none;
+        }
+
+        .list3 a:hover {
+            font-size: 12px;
+            color: #f00;
+        }
+
+        .lm_title {
+            font-size: 16px;
+            color: #c75f02;
+            font-weight: 700;
+        }
+
+        .more a {
+            font-size: 12px;
+            color: #444444;
+        }
+        /*委托服务动态   e*/
+        /*-右边  e--*/
+    </style>
+    <script type="text/javascript">
+        //下载附件
+        function downloadNotice(action) {
+            document.mainform.action = action;
+            document.mainform.submit();
+        }
+    </script>
+</head>
+<body>
+<div id="container">
+    <!--tops-->
+    <script type="text/javascript">
+        //登录
+        function tologin() {
+            var url = parent.window.location.href;
+            if (url.indexOf("frontWelcome") > 0) {
+                url = "/timebank/welcome/front/mybank.action";
+            }
+            top.window.location = "/timebank/welcome/frontLogin.action?returnUrl=" + url;
+        }
+        //跳转
+        function goAction(action, target){
+            if(target == 1){
+                window.open(action);
+            }else{
+                top.window.location.href = action;
+            }
+        }
+        //显示手机二维码
+
+        function showQRCode(){
+            $("#code").show();
+        }
+        //隐藏手机二维码
+
+        function hideQRCode(){
+            $("#code").hide();
+        }
+    </script>
+ {include file="public/header"}
+
+    <!--主要内容区    s--->
+    <div id="main" style="height: 800px;">
+        <!--csxm_left    s--->
+        <div id="csxm_left">
+            <form action="" method="post" id="mainform" name="mainform">
+                <input type="hidden" name="articleId" id="articleId"
+                       value="358" />
+            </form>
+            <div class="location">
+                <p>当前位置：首页-关于我们</p>
+            </div>
+
+            <div class="cs_content">
+                <p class="content_title">南沙时间银行会员在淘宝代购流程</p>
+                <div class="con_xx">
+                    <p>发布时间：2016-11-02</p>
+                </div>
+                <p class="p1" style="padding-bottom: 19px;"></p><p class="p" style="text-indent:-26.25pt;">
+                <span style="font-family:Microsoft YaHei;font-size:16px;"></span>
+            </p>
+                <p class="p" style="text-align:left;text-indent:26.25pt;">
+                    <br>
+                </p>
+                <blockquote>
+                    <p class="p" style="text-align:left;text-indent:26.25pt;">
+                        <br>
+                    </p>
+                    <p class="MsoNormal">
+                        <span style="font-size:24px;"><span style="font-size:18px;line-height:2;"><strong><span style="color:#E53333;font-size:24px;">第一步：</span><span style="font-size:24px;">找到您想购</span></strong></span><span style="font-size:18px;"></span><span style="font-size:24px;line-height:2;"><strong>买的商品，点击购买。</strong></span></span>
+                    </p>
+                    <p class="MsoNormal">
+		<span style="font-size:24px;"><span style="font-size:18px;line-height:2;"><strong><br>
+</strong></span></span>
+                    </p>
+                    <p class="MsoNormal">
+                        <img src="images/20170109115304_81.png" alt="">
+                    </p>
+                    <p class="MsoNormal">
+		<span style="font-size:18px;line-height:2;"><strong><br>
+</strong></span>
+                    </p>
+                    <p class="MsoNormal">
+		<span style="font-size:18px;line-height:2;"><strong><br>
+</strong></span>
+                    </p>
+                    <p class="MsoNormal">
+                        <span style="font-size:18px;line-height:2;"><strong><span style="color:#E53333;font-size:24px;">第二步：</span><span style="font-size:24px;">填写您的收货信息。</span></strong></span>
+                    </p>
+                    <p class="MsoNormal">
+		<span style="font-size:18px;line-height:2;"><strong><br>
+</strong></span>
+                    </p>
+                    <p class="MsoNormal">
+                        <img src="images/20170109115315_662.png" alt="">
+                    </p>
+                    <p class="MsoNormal">
+		<span style="font-size:18px;line-height:2;"><strong><br>
+</strong></span>
+                    </p>
+                    <p class="MsoNormal">
+		<span style="font-size:18px;line-height:2;"><strong><br>
+</strong></span>
+                    </p>
+                    <p class="MsoNormal">
+                        <span style="font-size:18px;line-height:2;"><strong><span style="color:#E53333;font-size:24px;">第三步：</span><span style="font-size:24px;">在</span></strong></span><span style="font-size:24px;line-height:2;"><strong>“找人代付”这里打勾，然后点击提交订单。</strong></span>
+                    </p>
+                    <p class="MsoNormal">
+		<span style="font-size:18px;line-height:2;"><strong><br>
+</strong></span>
+                    </p>
+                    <p class="MsoNormal">
+                        <img src="images/20170109115342_416.jpg" alt="">
+                    </p>
+                    <p class="MsoNormal">
+		<span style="font-size:18px;line-height:2;"><strong><br>
+</strong></span>
+                    </p>
+                    <p class="MsoNormal">
+		<span style="font-size:18px;line-height:2;"><strong><br>
+</strong></span>
+                    </p>
+                    <p class="MsoNormal">
+                        <span style="font-size:18px;line-height:2;"><strong><span style="color:#E53333;font-size:24px;">第四步：</span><span style="font-size:24px;">在好友的账户写</span></strong></span><span style="font-size:24px;line-height:2;"><strong>“南沙时间银行”，在留言框内写上“会员姓名和会员编号”，然后点击“请他付款”。</strong></span>
+                    </p>
+                    <p class="MsoNormal">
+		<span style="font-size:18px;line-height:2;"><strong><br>
+</strong></span>
+                    </p>
+                    <p class="MsoNormal">
+                        <img src="images/20170109105619_879.png" alt="">
+                    </p>
+                    <p class="MsoNormal">
+		<span style="font-size:18px;line-height:2;"><strong><br>
+</strong></span>
+                    </p>
+                    <p class="MsoNormal">
+		<span style="font-size:18px;line-height:2;"><strong><br>
+</strong></span>
+                    </p>
+                    <p class="MsoNormal">
+                        <span style="font-size:18px;line-height:2;"><strong><span style="color:#E53333;font-size:24px;">第五步：</span><span style="font-size:24px;">等待南沙时间银行工作人员通知之后，登录南沙时间银行平台兑换</span></strong></span><span style="font-size:24px;line-height:2;"><strong>“淘宝代付礼包”</strong></span>
+                    </p>
+                    <p class="MsoNormal">
+		<span style="font-size:18px;line-height:2;"><strong><br>
+</strong></span>
+                    </p>
+                    <p class="MsoNormal">
+                        <img src="images/20170109115413_104.png" alt="">
+                    </p>
+                    <p class="MsoNormal">
+		<span style="font-size:18px;line-height:2;"><strong><br>
+</strong></span>
+                    </p>
+                    <p class="MsoNormal">
+		<span style="font-size:18px;line-height:2;"><strong><br>
+</strong></span>
+                    </p>
+                    <p class="MsoNormal">
+                        <span style="font-size:18px;line-height:2;"><strong><span style="color:#E53333;font-size:24px;">第六步：</span><span style="font-size:24px;">点击兑换，兑换礼包</span></strong></span>
+                    </p>
+                    <p class="MsoNormal">
+		<span style="font-size:18px;line-height:2;"><strong><br>
+</strong></span>
+                    </p>
+                    <p class="MsoNormal">
+                        <img src="images/20170109105645_353.png" alt="">
+                    </p>
+                    <p class="MsoNormal">
+		<span style="font-size:18px;line-height:2;"><strong><br>
+</strong></span>
+                    </p>
+                    <p class="MsoNormal">
+		<span style="font-size:18px;line-height:2;"><strong><br>
+</strong></span>
+                    </p>
+                    <p class="MsoNormal">
+                        <span style="font-size:18px;line-height:2;"><strong><span style="color:#E53333;font-size:24px;">第七步：</span><span style="font-size:24px;">填写您的收货信息，点击</span></strong></span><span style="font-size:24px;line-height:2;"><strong>“提交订单”</strong></span>
+                    </p>
+                    <p class="MsoNormal">
+		<span style="font-size:18px;line-height:2;"><strong><br>
+</strong></span>
+                    </p>
+                    <p class="MsoNormal">
+                        <img src="images/20170109105656_470.png" alt="">
+                    </p>
+                    <p class="MsoNormal">
+		<span style="font-size:18px;line-height:2;"><strong><br>
+</strong></span>
+                    </p>
+                    <p class="MsoNormal">
+		<span style="font-size:18px;line-height:2;"><strong><br>
+</strong></span>
+                    </p>
+                    <p class="MsoNormal">
+                        <span style="font-size:18px;line-height:2;"><strong><span style="color:#E53333;font-size:24px;">第八步：</span><span style="font-size:24px;">输入密码，验证码，然后点击</span></strong></span><span style="font-size:24px;line-height:2;"><strong>“确定付款”</strong></span>
+                    </p>
+                    <p class="MsoNormal">
+		<span style="font-size:18px;line-height:2;"><strong><br>
+</strong></span>
+                    </p>
+                    <p class="MsoNormal">
+                        <img src="images/20170109105716_446.png" alt="">
+                    </p>
+                    <p class="MsoNormal">
+                        <strong><span style="font-size:18px;"><br>
+</span></strong>
+                    </p>
+                    <p class="MsoNormal">
+                        <strong><span style="font-size:24px;">最后等待收货就可以了。</span></strong>
+                    </p>
+                    <p class="MsoNormal">
+                        <strong><span style="font-size:18px;"><br>
+</span></strong>
+                    </p>
+                    <p class="MsoNormal">
+                        <strong><span style="font-size:18px;"><br>
+</span></strong>
+                    </p>
+                    <p class="MsoNormal">
+                        <strong><span style="font-size:18px;"><br>
+</span></strong>
+                    </p>
+                    <p class="MsoNormal">
+                        <strong><span style="font-size:18px;"><br>
+</span></strong>
+                    </p>
+                    <p class="MsoNormal" style="margin-left:0pt;text-indent:21pt;">
+                        <span style="font-size:24px;line-height:2;color:#E53333;"><strong>须注意事项：</strong></span>
+                    </p>
+                    <p class="p" style="text-indent:26.25pt;">
+                        <span style="font-size:24px;line-height:2;"><strong>（一）</strong></span><!--[endif]--><span style="font-size:24px;line-height:2;"><strong>为了不影响您的购物心情，购买的商品避免是秒杀或团购等限时付款的商品。</strong></span>
+                    </p>
+                    <p class="p" style="text-indent:26.25pt;">
+                        <span style="font-size:24px;line-height:2;"><strong>（二</strong></span><span style="font-size:24px;line-height:2;"><strong>）留意短信和站内信息，客服会通知会员在南沙时间银行商城购买与代付金额等价的</strong></span><span style="font-size:24px;line-height:2;"><strong>“淘宝代付礼包”（所折算的时间币向上浮动取整数）</strong></span>
+                    </p>
+                    <p class="p" style="text-indent:26.25pt;">
+                        <span style="font-size:24px;line-height:2;"><strong>（三</strong></span><span style="font-size:24px;line-height:2;"><strong>）会员使用时间币购买</strong></span><span style="font-size:24px;line-height:2;"><strong>“淘宝代付礼包”后，南沙时间银行工作人员会尽快进行代付操作。</strong></span>
+                    </p>
+                    <p class="p" style="text-indent:26.25pt;">
+                        <span style="font-size:24px;line-height:2;"><strong>（四）南沙时间银行工作人员代付成功后会信息告知会员，会员须留意淘宝卖家发货的物流信息。（</strong></span><u><span style="font-size:24px;line-height:2;"><strong>注意：物流过程中有损坏、漏发、发错货等事宜，请会员及时跟淘宝卖家协商处理，南沙时间银行不承担任何责任</strong></span></u><span style="font-size:24px;line-height:2;"><strong>）</strong></span>
+                    </p>
+                    <p class="p" style="text-indent:26.25pt;">
+                        <span style="font-size:24px;line-height:2;"><strong>（五）跨平台支付所购买的商品如发生争议需要退款，会员需按照购买商品的淘宝电商平台的操作流程办理，当货款退回到南沙时间银行的账户后，南沙时间银行工作人员会及时将所支付的时间币退回至个人账户。</strong></span>
+                    </p>
+                </blockquote>
+                <p>
+                    <br>
+                </p>
+                <p class="MsoNormal">
+                    <b><span style="font-size:18px;"> </span></b>
+                </p>
+                <span style="font-size:18px;"></span>
+                <p>
+                    <br>
+                </p><br><br><p></p>
+            </div>
+        </div>
+        <!--csxm_left    e--->
+
+
+    </div>
+    <!--主要内容区    e--->
+   {include file="public/footer"}
+    <script>
+        if(screen.width>1100){
+
+            //document.getElementById("foot").style.width=screen.width-21;
+        }
+    </script>
+    <!--版权信息    e--->		<!--版权信息    e--->
+</div>
+<script type="text/javascript">
+    jQuery("#sub_menu").hide();
+</script>
+</body>
+</html>

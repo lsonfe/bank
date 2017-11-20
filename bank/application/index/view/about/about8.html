@@ -1,0 +1,306 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="__STATIC__/index/css/index.css" />
+    <script type="text/javascript" src="__STATIC__/index/js/jquery-1.7.2.min.js"></script>
+    <style type="text/css">
+        /*-----主要内容  s ----*/
+        #main {
+            width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+        }
+        /*-慈善项目  s--*/
+        #csxm_left {
+            width: 100%;
+            float: left;
+            margin-bottom: 10px;
+            border: solid 1px #dbdbdb;
+        }
+
+        .location {
+            width: 100%;
+            height: 30px;
+            background-color: #f9f9f9;
+        }
+
+        .location p {
+            padding-left: 5px;
+            padding-top: 8px;
+            font-size: 12px;
+            color: #444;
+        }
+
+        /*具体慈善内容*/
+        .cs_content {
+            width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .content_title {
+            font-size: 18px;
+            text-align: center;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .con_xx {
+            width: 900px;
+            height: 30px;
+            border-bottom: dashed 1px #dbdbdb;
+        }
+
+        .con_xx p {
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            padding-top: 7px;
+        }
+
+        .p1 {
+            padding-top: 15px;
+            font-size: 12px;
+            color: #444;
+            line-height: 22px;
+        }
+
+        /*-慈善项目  e--*/
+
+        /*-右边  s--*/
+        #csxm_right {
+            width: 230px;
+            height: 600px;
+            float: right;
+        }
+
+        .table_top {
+            border-bottom: solid 1px #dcdcdc;
+        }
+
+        .xw_hover {
+            background-color: #ff9300;
+            font-size: 13px;
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .xw_now {
+            font-size: 13px;
+            color: #bbbbbb;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .list1 {
+            width: 218px;
+            height: 28px;
+            margin-left: auto;
+            margin-right: auto;
+            border-bottom: dashed 1px #ccc;
+        }
+
+        .list1 a {
+            font-size: 12px;
+            color: #444444;
+            text-decoration: none;
+        }
+
+        .list1 a:hover {
+            font-size: 12px;
+            color: #f00;
+        }
+        /*新闻动态  e*/
+        /*委托服务动态   s*/
+        .zxxq_top {
+            border-bottom: solid 1px #dbdbdb;
+        }
+
+        .wtfw {
+            width: 228px;
+            height: 209px;
+            border: solid 1px #dbdbdb;
+            float: right;
+        }
+
+        .list_box {
+            width: 218px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .list3 {
+            width: 208px;
+            height: 31px;
+            margin-left: auto;
+            margin-right: auto;
+            border-bottom: dashed 1px #ccc;
+        }
+
+        .list3 a,.list3 {
+            font-size: 12px;
+            color: #444444;
+            text-decoration: none;
+        }
+
+        .list3 a:hover {
+            font-size: 12px;
+            color: #f00;
+        }
+
+        .lm_title {
+            font-size: 16px;
+            color: #c75f02;
+            font-weight: 700;
+        }
+
+        .more a {
+            font-size: 12px;
+            color: #444444;
+        }
+        /*委托服务动态   e*/
+        /*-右边  e--*/
+    </style>
+    <script type="text/javascript">
+        //下载附件
+        function downloadNotice(action) {
+            document.mainform.action = action;
+            document.mainform.submit();
+        }
+    </script>
+</head>
+<body>
+<div id="container">
+    <!--tops-->
+    <script type="text/javascript">
+        //登录
+        function tologin() {
+            var url = parent.window.location.href;
+            if (url.indexOf("frontWelcome") > 0) {
+                url = "/timebank/welcome/front/mybank.action";
+            }
+            top.window.location = "/timebank/welcome/frontLogin.action?returnUrl=" + url;
+        }
+        //跳转
+        function goAction(action, target){
+            if(target == 1){
+                window.open(action);
+            }else{
+                top.window.location.href = action;
+            }
+        }
+        //显示手机二维码
+
+        function showQRCode(){
+            $("#code").show();
+        }
+        //隐藏手机二维码
+
+        function hideQRCode(){
+            $("#code").hide();
+        }
+    </script>
+    {include file="public/header"}
+
+    <!--主要内容区    s--->
+    <div id="main" style="height: 800px;">
+        <!--csxm_left    s--->
+        <div id="csxm_left">
+            <form action="" method="post" id="mainform" name="mainform">
+                <input type="hidden" name="articleId" id="articleId"
+                       value="358" />
+            </form>
+            <div class="location">
+                <p>当前位置：首页-关于我们</p>
+            </div>
+
+            <div class="cs_content">
+                <p class="content_title">南沙时间银行会员服务评价流程</p>
+                <div class="con_xx">
+                    <p>发布时间：2016-11-01</p>
+                </div>
+                <p class="p1" style="padding-bottom: 19px;"></p><p align="justify" class="MsoNormal" style="text-align:justify;text-indent:32pt;">
+                <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>一、</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"> </span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>服务委托方</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>（即需求方）</span></span><span style="font-family:黑体;font-size:16pt;"></span>
+            </p>
+                <p align="justify" class="MsoNormal" style="text-align:justify;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"> </span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>（</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>一）</span></span><b><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;font-weight:bold;"><span>南沙时间银行</span></span></b><b><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;font-weight:bold;"><span>会员</span></span></b><b><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;font-weight:bold;"><span>服务评价</span></span></b><span style="font-family:仿宋;font-size:16pt;"></span>
+                </p>
+                <p align="justify" class="MsoNormal" style="text-align:justify;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">1.</span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>服务委托方进入南沙时间银行</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>平台</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>，登录个人账户</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>；</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p align="justify" class="MsoNormal" style="text-align:justify;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">2.</span><span style="font-family:仿宋_GB2312;font-size:16pt;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">点击</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">“我的账户”，选择需评价的服务订单，并点击“完成并评价”</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>（</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>如有争议，点击有争议按钮，根据处理方式选择拒付或协商时间币</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>）；</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p align="justify" class="MsoNormal" style="text-align:justify;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">3.</span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>根据承接方的服务质量选择服务等级并填写相关评价内容，并确认评价完成。</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p align="justify" class="MsoNormal" style="text-align:justify;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;font-weight:normal;"><span>二、</span></span><span style="font-family:黑体;font-size:16pt;font-weight:normal;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">南沙时间银行</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">APP服务评价</span></span><span style="font-family:黑体;font-size:16pt;font-weight:normal;"></span>
+                </p>
+                <p align="justify" class="17" style="text-align:justify;text-indent:32pt;">
+                    <!--[if !supportLists]--><span style="font-family:仿宋_GB2312;font-size:16pt;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">（一）</span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"> </span></span></span><!--[endif]--><span style="font-family:仿宋_GB2312;font-size:16pt;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">服务委托方进入南沙时间银行</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">APP,登录个人账户</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>；</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p align="justify" class="17" style="text-align:justify;text-indent:32pt;">
+                    <!--[if !supportLists]--><span style="font-family:仿宋_GB2312;font-size:16pt;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">（二）</span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"> </span></span></span><!--[endif]--><span style="font-family:仿宋_GB2312;font-size:16pt;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">点击</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">“</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>待评价</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">”，选择需评价的服务订单，并点击“完成并评价”</span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>（</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>如有争议，点击有争议按钮，根据处理方式选择拒付或协商时间币</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>）；</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p align="justify" class="MsoNormal" style="text-align:justify;text-indent:32pt;">
+                    <!--[if !supportLists]--><span style="font-family:仿宋_GB2312;font-size:16pt;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">（三）</span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"> </span></span></span><!--[endif]--><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>根据承接方的服务质量选择服务等级并填写相关评价内容，并确认评价完成。</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p align="justify" class="MsoNormal" style="text-align:justify;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>三、</span> </span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>服务承接方</span></span><span style="font-family:黑体;font-size:16pt;"></span>
+                </p>
+                <p align="justify" class="17" style="text-align:justify;text-indent:32pt;">
+                    <b><span style="font-family:仿宋;font-size:16pt;font-weight:bold;"><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"> </span><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">（</span></span></span></b><b><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;font-weight:bold;"><span>一）</span></span></b><b><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;font-weight:bold;"><span>南沙时间银行</span></span></b><b><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;font-weight:bold;"><span>平台</span></span></b><b><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;font-weight:bold;"><span>服务评价</span></span></b><b><span style="font-family:黑体;font-size:16pt;font-weight:bold;"></span></b>
+                </p>
+                <p align="justify" class="MsoNormal" style="text-align:justify;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">1.</span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>服务承接方进入南沙时间银行</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>平台</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>，登录个人账户</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>；</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p align="justify" class="MsoNormal" style="text-align:justify;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">2.</span><span style="font-family:仿宋_GB2312;font-size:16pt;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">点击</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">“我的</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>服务</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">”</span><span style="font-family:仿宋_GB2312;font-size:16pt;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">里</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">“服务管理”</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>，选择</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">“我的承接服务”点击</span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>需评价的服务订单，</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>进入</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">“完成并评价”</span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>；</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p align="justify" class="MsoNormal" style="text-align:justify;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">3.</span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>填写相关评价内容，并确认评价完成</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>。</span></span><b><span style="font-family:仿宋_GB2312;font-size:16pt;font-weight:bold;"></span></b>
+                </p>
+                <p align="justify" class="MsoNormal" style="text-align:justify;text-indent:32pt;">
+                    <b><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;font-weight:bold;"> </span></b><b><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;font-weight:bold;"><span>（</span></span></b><b><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;font-weight:bold;"><span>二）</span></span></b><b><span style="font-family:楷体_GB2312;font-size:16pt;font-weight:bold;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">南沙时间银行</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">APP服务评价</span></span></b><b><span style="font-family:仿宋;font-size:16pt;font-weight:bold;"></span></b>
+                </p>
+                <p align="justify" class="17" style="text-align:justify;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">1.</span><span style="font-family:仿宋_GB2312;font-size:16pt;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">服务承接方进入南沙时间银行</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">APP，登录个人账户</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>；</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p align="justify" class="17" style="text-align:justify;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">2.</span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>点击</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">“待评价”</span><span style="font-family:仿宋_GB2312;font-size:16pt;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">，选择需评价的服务订单，并点击</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">“完成并评价”</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>；</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p align="justify" class="MsoNormal" style="text-align:justify;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">3.</span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>根据服务方的服务质量选择服务等级并填写相关评价内容，并确认评价完成</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>。</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p align="justify" class="MsoNormal" style="text-align:justify;text-indent:0pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>（</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>注：需求发布</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>任务</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>成功，时间币已成功转入</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>南沙时间银行平台</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>账户进行托管</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>；</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>承接方承接任务成功，需在约定的时间内完成任务；承接方完成任务后，需求方须给承接方评价，承接方收到评价后应给发布方评价；</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>双方成功评价后，时间币将自动转入服务承接方的账户。</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>）</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <!--EndFragment--><br><br><p></p>
+            </div>
+        </div>
+        <!--csxm_left    e--->
+
+
+    </div>
+    <!--主要内容区    e--->
+    {include file="public/footer"}
+    <script>
+        if(screen.width>1100){
+
+            //document.getElementById("foot").style.width=screen.width-21;
+        }
+    </script>
+    <!--版权信息    e--->		<!--版权信息    e--->
+</div>
+<script type="text/javascript">
+    jQuery("#sub_menu").hide();
+</script>
+</body>
+</html>

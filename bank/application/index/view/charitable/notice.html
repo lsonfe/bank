@@ -1,0 +1,131 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>时间银行--公益基金</title>
+    <link type="text/css" rel="stylesheet" href="__STATIC__/index/css/index.css" />
+    <link type="text/css" href="__STATIC__/index/css/list.css" rel="stylesheet" />
+    <script type="text/javascript" src="__STATIC__/index/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/index/js/javascript.js"></script>
+</head>
+
+<body>
+<div id="container">
+    <!--tops-->
+    <script type="text/javascript">
+        //登录
+        function tologin() {
+            var url = parent.window.location.href;
+            if (url.indexOf("frontWelcome") > 0) {
+                url = "/timebank/welcome/front/mybank.action";
+            }
+            top.window.location = "/timebank/welcome/frontLogin.action?returnUrl=" + url;
+        }
+        //跳转
+        function goAction(action, target){
+            if(target == 1){
+                window.open(action);
+            }else{
+                top.window.location.href = action;
+            }
+        }
+        //显示手机二维码
+
+        function showQRCode(){
+            $("#code").show();
+        }
+        //隐藏手机二维码
+
+        function hideQRCode(){
+            $("#code").hide();
+        }
+    </script>
+    {include file="public/header"}
+
+    <div id="main">
+        <div class="fenl">
+            <div class="qbfl_bt">南沙区慈善会</div>
+            <ul class="gyjj_ej">
+                <li><a href="{:url('charitable/index')}">基金介绍</a></li>
+                <li><a href="{:url('charitable/moneyopen')}">财务公开</a></li>
+                <li><a href="{:url('charitable/notice')}">通知公告</a></li>
+                <li><a href="{:url('charitable/activity')}">活动报道</a></li>
+            </ul>
+        </div>
+        <div class="gyjj_list">
+            <div class="csxm_title"><p>通知公告</p></div>
+            {volist name="data" id="vo"}
+            <div class="cs_list">
+                <p class="cssj">
+                    <img src="__STATIC__/index/images/dot.gif" />
+                    <a href="{:url('charitable/detail1',['id'=>$vo.id])}" target="_blank">{$vo.title}</a>
+                    <span style="float:right;padding-right:10px;">{$vo.time|date="Y-m-d",###} </span>
+                </p>
+            </div>
+            {/volist}
+            {:pagination($data)}
+            <!--分页  s-->
+            <form action="" id="mainform" name="mainform" method="post">
+                <input type="hidden" name="pageSize" value="6"/>
+
+                <div class="fen_page">
+                    <script>
+                        //验证跳转文本框
+                        function go(pageNo) {
+                            var num = pageNo;
+                            var totalNum = document.getElementById("totalPage").value;
+                            if (num == "0") {
+                                num = "1";
+                            }
+                            num = parseInt(num);
+                            totalNum = parseInt(totalNum);
+                            if (num > totalNum) {
+                                alert("不能超过最大分页数!");
+                                return;
+                            }
+                            changePage('indexArtByPro.action?programaId=124&pageNo=' + num);
+                        }
+                        //切换列表页面时提交查询表单以便跳转的页面中能附带原来的查询条件
+
+                        function changePage(action) {
+                            document.mainform.action = action;
+                            document.mainform.submit();
+                        }
+                    </script>
+                    <!-- <form name="pageform" method="post">
+                        <table border="0" cellpadding="0" cellspacing="0" height="35">
+                            <tr>
+                                <td width="120"><p style="font-size:12px; color:#444;">共找出<span style="color: #f00;">10</span>条记录</p></td>
+                                <td width="60" height="30" align="center" class="page_y1" valign="top">
+                                    <a><p>上一页</p></a>
+                                </td>
+
+
+                                <td width="30" align="center" class="page_y" style="background-color:#ff9300;" valign="top"><a href="javascript:go('0');"><p class="currentPage" style="height:22px;">1</p></a></td>
+
+
+                                <td width="60" align="center" valign="top" class="page_y2">
+                                    <a><p>下一页</p></a>
+                                </td>
+                                <input type="hidden" id="totalPage" value="1" />
+                            </tr>
+                        </table>
+
+                    </form>	 -->		</div>
+        </div>
+    </div>
+
+    {include file="public/footer"}
+    <script>
+        if(screen.width>1100){
+
+            //document.getElementById("foot").style.width=screen.width-21;
+        }
+    </script>
+    <!--版权信息    e--->	    <!--版权信息    e--->
+</body>
+<script type="text/javascript">
+    jQuery("#sub_menu").hide();
+</script>
+</html>

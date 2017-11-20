@@ -1,0 +1,370 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="__STATIC__/index/css/index.css" />
+    <script type="text/javascript" src="__STATIC__/index/js/jquery-1.7.2.min.js"></script>
+    <style type="text/css">
+        /*-----主要内容  s ----*/
+        #main {
+            width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+        }
+        /*-慈善项目  s--*/
+        #csxm_left {
+            width: 100%;
+            float: left;
+            margin-bottom: 10px;
+            border: solid 1px #dbdbdb;
+        }
+
+        .location {
+            width: 100%;
+            height: 30px;
+            background-color: #f9f9f9;
+        }
+
+        .location p {
+            padding-left: 5px;
+            padding-top: 8px;
+            font-size: 12px;
+            color: #444;
+        }
+
+        /*具体慈善内容*/
+        .cs_content {
+            width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .content_title {
+            font-size: 18px;
+            text-align: center;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .con_xx {
+            width: 900px;
+            height: 30px;
+            border-bottom: dashed 1px #dbdbdb;
+        }
+
+        .con_xx p {
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            padding-top: 7px;
+        }
+
+        .p1 {
+            padding-top: 15px;
+            font-size: 12px;
+            color: #444;
+            line-height: 22px;
+        }
+
+        /*-慈善项目  e--*/
+
+        /*-右边  s--*/
+        #csxm_right {
+            width: 230px;
+            height: 600px;
+            float: right;
+        }
+
+        .table_top {
+            border-bottom: solid 1px #dcdcdc;
+        }
+
+        .xw_hover {
+            background-color: #ff9300;
+            font-size: 13px;
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .xw_now {
+            font-size: 13px;
+            color: #bbbbbb;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .list1 {
+            width: 218px;
+            height: 28px;
+            margin-left: auto;
+            margin-right: auto;
+            border-bottom: dashed 1px #ccc;
+        }
+
+        .list1 a {
+            font-size: 12px;
+            color: #444444;
+            text-decoration: none;
+        }
+
+        .list1 a:hover {
+            font-size: 12px;
+            color: #f00;
+        }
+        /*新闻动态  e*/
+        /*委托服务动态   s*/
+        .zxxq_top {
+            border-bottom: solid 1px #dbdbdb;
+        }
+
+        .wtfw {
+            width: 228px;
+            height: 209px;
+            border: solid 1px #dbdbdb;
+            float: right;
+        }
+
+        .list_box {
+            width: 218px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .list3 {
+            width: 208px;
+            height: 31px;
+            margin-left: auto;
+            margin-right: auto;
+            border-bottom: dashed 1px #ccc;
+        }
+
+        .list3 a,.list3 {
+            font-size: 12px;
+            color: #444444;
+            text-decoration: none;
+        }
+
+        .list3 a:hover {
+            font-size: 12px;
+            color: #f00;
+        }
+
+        .lm_title {
+            font-size: 16px;
+            color: #c75f02;
+            font-weight: 700;
+        }
+
+        .more a {
+            font-size: 12px;
+            color: #444444;
+        }
+        /*委托服务动态   e*/
+        /*-右边  e--*/
+    </style>
+    <script type="text/javascript">
+        //下载附件
+        function downloadNotice(action) {
+            document.mainform.action = action;
+            document.mainform.submit();
+        }
+    </script>
+</head>
+<body>
+<div id="container">
+    <!--tops-->
+    <script type="text/javascript">
+        //登录
+        function tologin() {
+            var url = parent.window.location.href;
+            if (url.indexOf("frontWelcome") > 0) {
+                url = "/timebank/welcome/front/mybank.action";
+            }
+            top.window.location = "/timebank/welcome/frontLogin.action?returnUrl=" + url;
+        }
+        //跳转
+        function goAction(action, target){
+            if(target == 1){
+                window.open(action);
+            }else{
+                top.window.location.href = action;
+            }
+        }
+        //显示手机二维码
+
+        function showQRCode(){
+            $("#code").show();
+        }
+        //隐藏手机二维码
+
+        function hideQRCode(){
+            $("#code").hide();
+        }
+    </script>
+   {include file="public/header"}
+
+    <!--主要内容区    s--->
+    <div id="main" style="height: 800px;">
+        <!--csxm_left    s--->
+        <div id="csxm_left">
+            <form action="" method="post" id="mainform" name="mainform">
+                <input type="hidden" name="articleId" id="articleId"
+                       value="358" />
+            </form>
+            <div class="location">
+                <p>当前位置：首页-关于我们</p>
+            </div>
+
+            <div class="cs_content">
+                <p class="content_title">关于我们</p>
+                <div class="con_xx">
+                    <p>发布时间：2014-05-12</p>
+                </div>
+                <p class="p1" style="padding-bottom: 19px;"></p><p>
+                <strong><span style="line-height:2;font-size:14px;">1. 什么是“时间银行”</span></strong><br>
+                <span style="line-height:2;font-size:14px;"> 1.1时间银行的来源</span><br>
+                <span style="line-height:2;font-size:14px;"> 1.2时间银行的宗旨</span><br>
+                <span style="line-height:2;font-size:14px;"> 1.3时间银行的特点</span><br>
+                <span style="line-height:2;font-size:14px;"> 1.4成功案例</span><br>
+                <strong><span style="line-height:2;font-size:14px;">2. 南沙时间银行项目</span></strong><br>
+                <span style="line-height:2;font-size:14px;"> 2.1项目简介</span><br>
+                <span style="line-height:2;font-size:14px;"> 2.2银行性质</span><br>
+                <span style="line-height:2;font-size:14px;"> 2.3项目理念</span><br>
+                <span style="line-height:2;font-size:14px;"> 2.4会员对象</span><br>
+                <span style="line-height:2;font-size:14px;"> 2.5服务内容</span><br>
+                <span style="line-height:2;font-size:14px;"> 2.6运作模式</span>
+            </p>
+                <p>
+                    <a href="http:"><strong><span style="line-height:2;font-size:14px;">1.1</span></strong></a><strong><span style="line-height:2;font-size:14px;">“时间银行”的来源</span></strong>
+                </p>
+                <p style="text-indent:2em;">
+                    <span style="line-height:2;font-size:14px;">1990年第一家时间银行在美国成立，时至今天，超过1000家时间银行遍布世界六大洲的26个国家，其中，经官方认证的美国时间银行共有53家，在108家英国时间银行中，共有约20,000个参与人，累计储蓄130万小时互助时间。从1999年开始，我国上海、北京、成都、南京、济南等地也先后开展了时间银行互助养老的社区试点。</span>
+                </p>
+                <p style="text-indent:2em;">
+                    <span style="line-height:2;font-size:14px;">时间银行的倡导者是美国人埃德加·卡恩。1980年，卡恩46岁，却经历了一次大面积心肌梗塞，这次经历让对生活有了重新的理解，他的生活方向也由此改变。</span>
+                </p>
+                <p style="text-indent:2em;">
+                    <span style="line-height:2;font-size:14px;">卡恩的父亲是一名当律师法学教授，早年时他就有消除不公正的思想。卡恩的妻子是非洲裔美国人，他们跨越种族和肤色的婚姻在当时是被人威胁的。</span>
+                </p>
+                <p style="text-indent:2em;">
+                    <span style="line-height:2;font-size:14px;">卡恩是伦敦经济学院的资深研究员，他创立了时间银行这种模式，他希望这种模式能为社会变革带来一些经济和精神效益。根据这种模式，劳动不分贵贱，每个人的工作时间都是平等的。这非常类似于马克思提出的“价值实际上无形的时间”。在他看来，不管是盖房子，还是照顾小孩，这些工作都是平等的。他还设计了时间银行系统，通过电脑可以把每个工作者的工作时间或接受服务的时间都按小时记录下来。目前，北美、欧洲和亚洲23个国家的300多个社区的企业都采用了这个系统。每个参加者工作的时间或接受服务的时间都按小时由电脑记录下来。卡恩说，北美、欧洲和亚洲23个国家的300多个社区的企业都采用了这个系统。</span>
+                </p>
+                <p style="text-indent:2em;">
+                    <a href="http:"><strong><span style="line-height:2;font-size:14px;">1.2</span></strong></a><strong><span style="line-height:2;font-size:14px;">“时间银行”的宗旨</span></strong>
+                </p>
+                <p style="text-indent:2em;">
+                    <span style="line-height:2;font-size:14px;">时间银行的宗旨是用支付的时间来换取别人的帮助，而银行是时间流通的桥梁。自愿添加时间银行的客户在需要时拿出自己的时间和其他成员交换服务，既解决了一时的困难，又彼此联络了感情，克服了现代社会人们互不往来的缺欠。</span>
+                </p>
+                <p style="text-indent:2em;">
+                    <a href="http:"><strong><span style="line-height:2;font-size:14px;">1.3</span></strong></a><strong><span style="line-height:2;font-size:14px;">“时间银行”的特点</span></strong>
+                </p>
+                <p style="text-indent:2em;">
+                    <span style="line-height:2;font-size:14px;">时间银行的显着特点就是双向。时间银行不是一个慈善组织，它只在供与求之间发挥穿针引线的作用。因此，参加时间银行的人不需付出一分钱，只需将自己的时间存入时间银行即可。成为正式成员后，可以根据自身情况服务于别人积累时间，然后自己也可接受别人的帮助。这就是所谓的双向原则。因此，自添加那天起，时间银行成员就要做好准备，既可得到别人的时间与帮助，也要准备在时间允许时为别人付出时间与帮助。</span>
+                </p>
+                <p style="text-indent:2em;">
+                    <span style="line-height:2;font-size:14px;">“时间货币”与一般货币不同，它不像传统货币那样，会可能因汇率贬值而导致财产缩水，而“时间货币”则不同，它不仅不会贬值，还可以储存，也可以转让，甚至还能预支，交易时也不用纳税。</span>
+                </p>
+                <p style="text-indent:2em;">
+                    <a href="http:"><strong><span style="line-height:2;font-size:14px;">1.4</span></strong></a><strong><span style="line-height:2;font-size:14px;">成功案例</span></strong>
+                </p>
+                <p style="text-indent:2em;">
+                    <span style="line-height:2;font-size:14px;">案例一：</span>
+                </p>
+                <p style="text-indent:2em;">
+                    <span style="line-height:2;font-size:14px;">家住宾夕法尼亚州阿伦敦的28岁姑娘玛丽亚.比利亚克雷塞斯，计划于当年5月结婚。而就在筹备婚礼时，因手头紧而犯愁。关键时刻，她想到了所在社区的“时间银行”，便提出自己用一个月时间，以担任医疗翻译、帮人照看宠物等方式来获取“时间币”，再用这些“时间币”换取自己婚礼的所需。</span>
+                </p>
+                <p style="text-indent:2em;">
+                    <span style="line-height:2;font-size:14px;">一个月后，玛丽亚赚够了足够的“时间币”，然后从容不迫地举行了婚礼。婚礼当天，和她一样在“时间银行”赚取“时间币”的一位化妆品销售员顾客，为她精心画好新娘妆，另一位在“时间银行”打工的蛋糕师，也为她送来了一个7层高的结婚蛋糕，这些都让玛丽亚喜出望外。整场婚姻隆重而热烈，刚好花去了玛丽亚一个月所赚取的200个“时间币”。换算下来，为她节省了大约2000美元。玛丽亚说：”如果单靠自己的力量，去规划那怕是一件简单非常的小事，不仅要花费我不少美元，还要耗费许多时间和精力，但借助了”时间银行”这个外力，一切都很容易得到了解决，确实一举两得！”</span>
+                </p>
+                <p style="text-indent:2em;">
+                    <span style="line-height:2;font-size:14px;"> 案例二：</span>
+                </p>
+                <p style="text-indent:2em;">
+                    <span style="line-height:2;font-size:14px;">居住在纽约的茱迪·卡帕从花旗集团提前退休时计划去社区大学上艺术课程和周游世界。但金融危机的发生让茱迪的梦想化成泡影。</span>
+                </p>
+                <p style="text-indent:2em;">
+                    <span style="line-height:2;font-size:14px;">她的主要资产</span><a href="http://finance.ifeng.com/company/data/news/1143.shtml" target="_blank"><span style="line-height:2;font-size:14px;">花旗银行</span></a><span style="line-height:2;font-size:14px;">股票在一年内缩水过半，令她损失80万美金。61岁的茱迪不但取消了艺术课程和旅游计划，就连找人修理水池、橱柜、清洗玻璃的费用都无法负担。为了养老，她不得不节衣缩食，避免开支。</span>
+                </p>
+                <p style="text-indent:2em;">
+                    <span style="line-height:2;font-size:14px;">于是茱迪成为了时间银行的用户，在那里她可以用自己的时间和技能与别人交换，获得所需的服务。</span>
+                </p>
+                <p style="text-indent:2em;">
+                    <span style="line-height:2;font-size:14px;"> 案例三：</span>
+                </p>
+                <p style="text-indent:2em;">
+                    <span style="line-height:2;font-size:14px;">缅因州一家社区“时间银行”的工作人员劳拉.古铁雷斯说：“在目前全球经济正处于复苏阶段的关键时刻，“时间银行”可以帮助人们挖掘想象力，让小区的资源得到了最大发挥，这是以前从未有过的。”</span>
+                </p>
+                <p style="text-indent:2em;">
+                    <span style="line-height:2;font-size:14px;">79岁的琼史蒂.文森女士，退休前是一位大学教授，当看到小区许多人因工作压力大而生病时，她主动放弃了安逸生活，将自家后院腾出来教大家打太极拳、帮助其中的个人修改简历、给小区“时间银行”刊物撰写专栏，并为失业者寻找工作机会等。她以这种方式赚取了“时间币”，为自己换来了免费家庭看护服务。对此，老人感触颇深：“时间银行”不仅让我丰富了晚年生活，还认识了更多邻居，在得到别人帮助的同时，我也以自己的能力为别人做了贡献，这些都要归功于“时间银行”。</span>
+                </p>
+                <p style="text-indent:2em;">
+                    <span style="line-height:2;font-size:14px;"> 案例四：</span>
+                </p>
+                <p style="text-indent:2em;">
+                    <span style="line-height:2;font-size:14px;">英国时间银行的用户罗莉塔就曾向当地的银行预支时间，请大家帮助安排她父亲的丧礼。没多久，一群素未谋面的邻居就找到罗莉塔。他们有的帮助她清理散落在客厅的医疗器材，让客厅恢复原样；有的帮她整理厨房，煮一顿丰富的晚餐；有的陪她聊天、安慰她。在大家的帮助下，父亲的丧礼办得很成功。但这些并不是不求回报的义务服务，罗莉塔欠的是“时间债”。丧礼过后，罗莉塔就得向时间银行报到做服务，替他人刷油漆、教授基本电脑技能、帮别人在网上找工作等，赚时间币还给银行。</span>
+                </p>
+                <p style="text-indent:2em;">
+                    <a href="http:"><strong><span style="line-height:2;font-size:14px;">2.1</span></strong></a><strong><span style="line-height:2;font-size:14px;">项目简介</span></strong>
+                </p>
+                <p style="text-indent:2em;">
+                    <span style="line-height:2;font-size:14px;">“南沙时间银行”是在南沙区政府支持下，由区民政局实施，采用购买服务方式，由南沙国际技术合作服务中心负责建设和运营的一项社区互助服务公益项目，会员将参与志愿服务的时间存储在时间银行中，等将来自己需要帮助的时候可提取所存储的时间获得相应的服务，也可以通过银行兑换系统用服务时间换取自己所需要的物品。</span>
+                </p>
+                <p style="text-indent:2em;">
+                    <span style="line-height:2;font-size:14px;">人人拥有时间资源，人人皆有专长所能。南沙时间银行通过“存储时间、随需使用”的志愿者服务模式，把志愿服务、扶贫帮困和助人自助、文明创建有效结合，从而可以更好激励志愿者参与服务的积极性，促进社区服务的可持续性进行。</span>
+                </p>
+                <p style="text-indent:2em;">
+                    <a href="http:"><strong><span style="line-height:2;font-size:14px;">2.2</span></strong></a><strong><span style="line-height:2;font-size:14px;">银行性质</span></strong>
+                </p>
+                <p style="text-indent:2em;">
+                    <span style="line-height:2;font-size:14px;">时间银行是以时间存储交换为核心，以时间货币化为媒介的第三方时间存管平台，是公益类银行账户体系。</span>
+                </p>
+                <p style="text-indent:2em;">
+                    <a href="http:"><strong><span style="line-height:2;font-size:14px;">2.3</span></strong></a><strong><span style="line-height:2;font-size:14px;">理念</span></strong>
+                </p>
+                <p style="text-indent:2em;">
+                    <span style="line-height:2;font-size:14px;">邻里相守、助人自助。</span>
+                </p>
+                <p style="text-indent:2em;">
+                    <a href="http:"><strong><span style="line-height:2;font-size:14px;">2.4</span></strong></a><strong><span style="line-height:2;font-size:14px;">会员对象</span></strong>
+                </p>
+                <p style="text-indent:2em;">
+                    <span style="line-height:2;font-size:14px;">采用实名会员制，所有热心社会公益的人士以及有服务需求的人群均可申请注册为会员。</span>
+                </p>
+                <p style="text-indent:2em;">
+                    <a href="http:"><strong><span style="line-height:2;font-size:14px;">2.5</span></strong></a><strong><span style="line-height:2;font-size:14px;">服务内容</span></strong>
+                </p>
+                <p style="text-indent:2em;">
+                    <span style="line-height:2;font-size:14px;">老人陪护、家政清洁、小孩托管、家教培训、心理咨询、法律援助、健康咨询、购物接送、专业技能等等，只要不违反国家法律法规的内容。</span>
+                </p>
+                <p style="text-indent:2em;">
+                    <a href="http:"><strong><span style="line-height:2;font-size:14px;">2.6</span></strong></a><strong><span style="line-height:2;font-size:14px;">运作模式</span></strong>
+                </p>
+                <p>
+                    <img width="1439" height="1159" style="width:763px;height:600px;" alt="" src="http://www.nstimebank.com/timebank/upload/image/20140421/20140421160603_973.png">
+                </p><br><br><p></p>
+            </div>
+        </div>
+        <!--csxm_left    e--->
+
+
+    </div>
+    <!--主要内容区    e--->
+   {include file="public/footer"}
+    <script>
+        if(screen.width>1100){
+
+            //document.getElementById("foot").style.width=screen.width-21;
+        }
+    </script>
+    <!--版权信息    e--->		<!--版权信息    e--->
+</div>
+<script type="text/javascript">
+    jQuery("#sub_menu").hide();
+</script>
+</body>
+</html>

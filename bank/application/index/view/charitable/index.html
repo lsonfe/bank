@@ -1,0 +1,92 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>南沙区慈善会介绍</title>
+    <link type="text/css" rel="stylesheet" href="__STATIC__/index/css/index.css" />
+    <script type="text/javascript" src="__STATIC__/index/js/jquery-1.7.2.min.js"></script>
+
+
+<body>
+<div id="container">
+    <!--tops-->
+    <script type="text/javascript">
+        //登录
+        function tologin() {
+            var url = parent.window.location.href;
+            if (url.indexOf("frontWelcome") > 0) {
+                url = "/timebank/welcome/front/mybank.action";
+            }
+            top.window.location = "/timebank/welcome/frontLogin.action?returnUrl=" + url;
+        }
+        //跳转
+        function goAction(action, target){
+            if(target == 1){
+                window.open(action);
+            }else{
+                top.window.location.href = action;
+            }
+        }
+        //显示手机二维码
+
+        function showQRCode(){
+            $("#code").show();
+        }
+        //隐藏手机二维码
+
+        function hideQRCode(){
+            $("#code").hide();
+        }
+    </script>
+    {include file="public/header"}
+    <!--主要内容区    s--->
+    <div id="main" style="height: 800px;">
+        <div class="fenl">
+            <div class="qbfl_bt">南沙区慈善会</div>
+            <ul class="gyjj_ej">
+                <li><a href="{:url('charitable/index')}">基金介绍</a></li>
+                <li><a href="{:url('charitable/moneyopen')}">财务公开</a></li>
+                <li><a href="{:url('charitable/notice')}">通知公告</a></li>
+                <li><a href="{:url('charitable/activity')}">活动报道</a></li>
+            </ul>
+        </div>
+
+        <!--csxm_left    s--->
+        <div class="gyjj_list">
+
+            <div class="location">
+                <p>当前位置：首页&nbsp;>>&nbsp;南沙区慈善会&nbsp;>>&nbsp;慈善会介绍&nbsp;</p>
+            </div>
+
+            <div class="cs_content">
+                <p class="content_title">南沙区慈善会介绍</p>
+                <div class="con_xx">
+                    <p>发布时间：2016-10-27</p>
+                </div>
+                <p class="p1" style="padding-bottom: 19px;"><blockquote>
+                <p>
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 南沙区慈善会成立于2007年8月1日，是在南沙区开展慈善募捐和救助工作的社会团体，由18个单位会员组成。业务范围包括：组织、协调社会各界力量，多渠道多形式筹集慈善资金，协助政府和民间发展各种慈善事业，协调和指导区内各慈善团体开展扶贫济困的社会救助工作，开展与各地区慈善交流活动，研究、探索发展慈善福利事业的新途径。</span>
+                </p>
+                </blockquote></br></br></p>
+            </div>
+        </div>
+        <!--csxm_left    e--->
+
+
+    </div>
+    <!--主要内容区    e--->
+    {include file="public/footer"}
+    <script>
+        if(screen.width>1100){
+
+            //document.getElementById("foot").style.width=screen.width-21;
+        }
+    </script>
+    <!--版权信息    e--->		<!--版权信息    e--->
+</div>
+<script type="text/javascript">
+    jQuery("#sub_menu").hide();
+</script>
+</body>
+</html>

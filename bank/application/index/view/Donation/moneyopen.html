@@ -1,0 +1,148 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>社会捐赠基金财务公开</title>
+    <link type="text/css" rel="stylesheet" href="__STATIC__/index/css/index.css" />
+    <script type="text/javascript" src="__STATIC__/index/js/jquery-1.7.2.min.js"></script>
+    <style type="text/css">
+        .xq_list {border-left:solid 1px #ccc;border-top:solid 1px #ccc;border-right:solid 1px #ccc;font-size:14px;}
+        .xq_list_lb{border-left:solid 1px #ccc; border-bottom:solid 1px #ccc;}
+        .xq_list_l{border-left:solid 1px #ccc;}
+        .xq_list_b{border-bottom:solid 1px #ccc;}
+        .over{background-color:#eee;}
+    </style>
+
+<body>
+<div id="container">
+    <!--tops-->
+    <script type="text/javascript">
+        //登录
+        function tologin() {
+            var url = parent.window.location.href;
+            if (url.indexOf("frontWelcome") > 0) {
+                url = "/timebank/welcome/front/mybank.action";
+            }
+            top.window.location = "/timebank/welcome/frontLogin.action?returnUrl=" + url;
+        }
+        //跳转
+        function goAction(action, target){
+            if(target == 1){
+                window.open(action);
+            }else{
+                top.window.location.href = action;
+            }
+        }
+        //显示手机二维码
+
+        function showQRCode(){
+            $("#code").show();
+        }
+        //隐藏手机二维码
+
+        function hideQRCode(){
+            $("#code").hide();
+        }
+    </script>
+   {include file="public/header"}
+
+
+    <!--主要内容区    s--->
+    <div id="main" style="height: 800px;">
+        <div class="fenl">
+            <div class="qbfl_bt">社会捐赠基金</div>
+            <ul class="gyjj_ej">
+                <li><a href="{:url('donation/index')}">基金介绍</a></li>
+                <li><a href="{:url('donation/moneyopen')}">财务公开</a></li>
+                <li><a href="{:url('donation/notice')}">公示与报告</a></li>
+                <li><a href="{:url('donation/contact')}">联系我们</a></li>
+            </ul>
+
+        </div>
+
+        <!--csxm_left    s--->
+        <div class="gyjj_list">
+
+            <div class="location">
+                <p>当前位置：首页&nbsp;>>&nbsp;公益基金&nbsp;>>&nbsp;社会捐赠基金&nbsp;>>&nbsp;财务公开&nbsp;</p>
+            </div>
+
+            <div class="cs_content">
+                <form action="" id="mainform" name="mainform" method="post" style="padding-top: 20px;">
+                    <input type="hidden" id="id" name="id" value="G001001" />
+                    <table id="list" width="100%" border="0" cellspacing="0" cellpadding="0" class="xq_list">
+                        <tr style="background:#eee;">
+                            <th height="30" width="45" class="xq_title xq_list_b" align="center">序号</th>
+                            <th width="110" class="xq_title xq_list_lb" align="center">流水号</th>
+                            <th width="120" class="xq_title xq_list_lb" align="center">日期</th>
+                            <th width="110" class="xq_title xq_list_lb" align="center">对方账户</th>
+                            <th width="80" class="xq_title xq_list_lb" align="center">收入(枚)</th>
+                            <th width="80" class="xq_title xq_list_lb" align="center">支出(枚)</th>
+                            <th width="80" class="xq_title xq_list_lb" align="center">来源</th>
+                            <th class="xq_title xq_list_lb" align="center">摘要</th>
+                            <th width="90" class="xq_title xq_list_lb" align="center">余额(枚)</th>
+                        </tr>
+                        {volist name="data" id="vo"}
+                        <tr>
+                            <td height="28" width="30" class="xq_title xq_list_b" align="center">{$vo.id}</td>
+                            <td width="110" class="xq_title xq_list_lb" align="center">
+                                <a >{$vo.order}</a>
+                            </td>
+                            <td width="120" class="xq_title xq_list_lb" align="center">{$vo.time|date="Y-m-d",###}</td>
+                            <td width="110" class="xq_title xq_list_lb" align="center">
+                                {$vo.cross}
+                            </td>
+                            <td width="90" class="xq_title xq_list_lb" align="center">&nbsp;
+                                {$vo.income}
+                            </td>
+                            <td width="90" class="xq_title xq_list_lb" align="center">&nbsp;
+								{$vo.expenditure}
+                            </td>
+                            <td width="80" class="xq_title xq_list_lb" align="center">
+                                &nbsp;{$vo.source}
+                            </td>
+                            <td class="xq_title xq_list_lb">&nbsp;{$vo.abstract}</td>
+                            <td width="80" class="xq_title xq_list_lb" align="center">&nbsp;{$vo.balance}</td>
+                        </tr>
+                        {/volist}
+                    </table>
+                    {:pagination($data)}
+                </form>
+                <script type="text/javascript">
+                    $(function(){
+                        //绑定鼠标悬浮事件
+                        $("#list tr:gt(0)").mouseover(function(){
+                            $(this).addClass("over");
+                        }).mouseout(function(){
+                            $(this).removeClass("over");
+                        });
+                    });
+                    //切换列表页面时提交查询表单以便跳转的页面中能附带原来的查询条件
+                    function changePage(action) {
+                        document.mainform.action = action;
+                        document.mainform.submit();
+                    }
+                </script>
+
+            </div>
+        </div>
+        <!--csxm_left    e--->
+
+
+    </div>
+    <!--主要内容区    e--->
+    {include file="public/footer"}
+    <script>
+        if(screen.width>1100){
+
+            //document.getElementById("foot").style.width=screen.width-21;
+        }
+    </script>
+    <!--版权信息    e--->		<!--版权信息    e--->
+</div>
+<script type="text/javascript">
+    jQuery("#sub_menu").hide();
+</script>
+</body>
+</html>

@@ -1,0 +1,513 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="__STATIC__/index/css/index.css" />
+    <script type="text/javascript" src="__STATIC__/index/js/jquery-1.7.2.min.js"></script>
+    <style type="text/css">
+        /*-----主要内容  s ----*/
+        #main {
+            width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+        }
+        /*-慈善项目  s--*/
+        #csxm_left {
+            width: 100%;
+            float: left;
+            margin-bottom: 10px;
+            border: solid 1px #dbdbdb;
+        }
+
+        .location {
+            width: 100%;
+            height: 30px;
+            background-color: #f9f9f9;
+        }
+
+        .location p {
+            padding-left: 5px;
+            padding-top: 8px;
+            font-size: 12px;
+            color: #444;
+        }
+
+        /*具体慈善内容*/
+        .cs_content {
+            width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .content_title {
+            font-size: 18px;
+            text-align: center;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .con_xx {
+            width: 900px;
+            height: 30px;
+            border-bottom: dashed 1px #dbdbdb;
+        }
+
+        .con_xx p {
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            padding-top: 7px;
+        }
+
+        .p1 {
+            padding-top: 15px;
+            font-size: 12px;
+            color: #444;
+            line-height: 22px;
+        }
+
+        /*-慈善项目  e--*/
+
+        /*-右边  s--*/
+        #csxm_right {
+            width: 230px;
+            height: 600px;
+            float: right;
+        }
+
+        .table_top {
+            border-bottom: solid 1px #dcdcdc;
+        }
+
+        .xw_hover {
+            background-color: #ff9300;
+            font-size: 13px;
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .xw_now {
+            font-size: 13px;
+            color: #bbbbbb;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .list1 {
+            width: 218px;
+            height: 28px;
+            margin-left: auto;
+            margin-right: auto;
+            border-bottom: dashed 1px #ccc;
+        }
+
+        .list1 a {
+            font-size: 12px;
+            color: #444444;
+            text-decoration: none;
+        }
+
+        .list1 a:hover {
+            font-size: 12px;
+            color: #f00;
+        }
+        /*新闻动态  e*/
+        /*委托服务动态   s*/
+        .zxxq_top {
+            border-bottom: solid 1px #dbdbdb;
+        }
+
+        .wtfw {
+            width: 228px;
+            height: 209px;
+            border: solid 1px #dbdbdb;
+            float: right;
+        }
+
+        .list_box {
+            width: 218px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .list3 {
+            width: 208px;
+            height: 31px;
+            margin-left: auto;
+            margin-right: auto;
+            border-bottom: dashed 1px #ccc;
+        }
+
+        .list3 a,.list3 {
+            font-size: 12px;
+            color: #444444;
+            text-decoration: none;
+        }
+
+        .list3 a:hover {
+            font-size: 12px;
+            color: #f00;
+        }
+
+        .lm_title {
+            font-size: 16px;
+            color: #c75f02;
+            font-weight: 700;
+        }
+
+        .more a {
+            font-size: 12px;
+            color: #444444;
+        }
+        /*委托服务动态   e*/
+        /*-右边  e--*/
+    </style>
+    <script type="text/javascript">
+        //下载附件
+        function downloadNotice(action) {
+            document.mainform.action = action;
+            document.mainform.submit();
+        }
+    </script>
+</head>
+<body>
+<div id="container">
+    <!--tops-->
+    <script type="text/javascript">
+        //登录
+        function tologin() {
+            var url = parent.window.location.href;
+            if (url.indexOf("frontWelcome") > 0) {
+                url = "/timebank/welcome/front/mybank.action";
+            }
+            top.window.location = "/timebank/welcome/frontLogin.action?returnUrl=" + url;
+        }
+        //跳转
+        function goAction(action, target){
+            if(target == 1){
+                window.open(action);
+            }else{
+                top.window.location.href = action;
+            }
+        }
+        //显示手机二维码
+
+        function showQRCode(){
+            $("#code").show();
+        }
+        //隐藏手机二维码
+
+        function hideQRCode(){
+            $("#code").hide();
+        }
+    </script>
+   {include file="public/header"}
+    <!--主要内容区    s--->
+    <div id="main" style="height: 800px;">
+        <!--csxm_left    s--->
+        <div id="csxm_left">
+            <form action="" method="post" id="mainform" name="mainform">
+                <input type="hidden" name="articleId" id="articleId"
+                       value="358" />
+            </form>
+            <div class="location">
+                <p>当前位置：首页-关于我们</p>
+            </div>
+
+            <div class="cs_content">
+                <p class="content_title">南沙时间银行团体会员注册流程</p>
+                <div class="con_xx">
+                    <p>发布时间：2017-08-16</p>
+                </div>
+                <p class="p1" style="padding-bottom: 19px;"></p><p class="MsoNormal" style="text-indent:2em;">
+                <b>1、</b><b>步骤一：填写南沙时间银行团体会员申请表</b><b></b>
+            </p>
+                <p style="text-indent:2em;">
+                </p><table class="MsoNormalTable" style="width:426.1pt;">
+                <tbody>
+                <tr>
+                    <td width="568" valign="center" colspan="5" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal">
+                            <b><span style="font-family:宋体;font-size:10.5pt;">基本资料</span></b><span style="font-family:Calibri;font-size:10.5000pt;"></span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="98" valign="center" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal">
+                            <span style="font-family:宋体;font-size:12.0000pt;">单位名称</span><span style="font-family:Calibri;font-size:10.5000pt;"></span>
+                        </p>
+                    </td>
+                    <td width="185" valign="center" colspan="2" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal">
+                            <span style="font-family:宋体;font-size:10.5000pt;">广州市南沙区</span><span style="font-family:宋体;font-size:10.5000pt;">xxxxx<span>服务中心</span></span><span style="font-family:宋体;font-size:10.5000pt;"></span>
+                        </p>
+                    </td>
+                    <td width="106" valign="center" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal" align="center" style="text-align:center;">
+                            <span style="font-family:宋体;font-size:10.5000pt;">统一社会信用代码</span><span style="font-family:Calibri;font-size:10.5000pt;"></span>
+                        </p>
+                    </td>
+                    <td width="178" valign="center" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal">
+                            <span style="font-family:宋体;font-size:10.5000pt;">18<span>个字符代码</span></span><span style="font-family:宋体;font-size:10.5000pt;"></span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="98" valign="center" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal">
+                            <span style="font-family:宋体;font-size:10.5000pt;">单位注册时间</span><span style="font-family:Calibri;font-size:10.5000pt;"></span>
+                        </p>
+                    </td>
+                    <td width="185" valign="center" colspan="2" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal">
+                            <span style="font-family:宋体;font-size:10.5000pt;">xxxx<span>年</span><span>xx</span><span>月</span><span>x</span><span>日</span></span><span style="font-family:宋体;font-size:10.5000pt;"></span>
+                        </p>
+                    </td>
+                    <td width="106" valign="center" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal" align="center" style="text-align:center;">
+                            <span style="font-family:宋体;font-size:10.5000pt;">法定代表人姓名</span><span style="font-family:Calibri;font-size:10.5000pt;"></span>
+                        </p>
+                    </td>
+                    <td width="178" valign="center" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal">
+                            <span style="font-family:宋体;font-size:10.5000pt;">李某某</span><span style="font-family:宋体;font-size:10.5000pt;"></span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="98" valign="center" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal" align="center" style="text-align:center;">
+                            <span style="font-family:宋体;font-size:12.0000pt;">法定代表人身份证号</span><span style="font-family:宋体;font-size:12.0000pt;"></span>
+                        </p>
+                    </td>
+                    <td width="469" valign="center" colspan="4" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal">
+                            <span style="font-family:宋体;font-size:10.5000pt;">填写法人代表人正确身份证号</span><span style="font-family:宋体;font-size:10.5000pt;"></span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="568" valign="center" colspan="5" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal">
+                            <b><span style="font-family:宋体;font-size:10.5pt;">联系方式：</span></b><span style="font-family:Calibri;font-size:10.5000pt;"></span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="142" valign="center" colspan="2" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal">
+                            <span style="font-family:宋体;font-size:12.0000pt;">单位联系人及职务</span><span style="font-family:宋体;font-size:12.0000pt;"></span>
+                        </p>
+                    </td>
+                    <td width="426" valign="center" colspan="3" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal">
+                            <span style="font-family:宋体;font-size:10.5000pt;">姓名：</span><span style="font-family:Calibri;font-size:10.5000pt;"> </span><span style="font-family:宋体;font-size:10.5000pt;">林</span><span style="font-family:宋体;font-size:10.5000pt;">x</span><span style="font-family:Calibri;font-size:10.5000pt;"> </span><span style="font-family:宋体;font-size:10.5000pt;">职务：</span><span style="font-family:宋体;font-size:10.5000pt;">部长</span><span style="font-family:Calibri;font-size:10.5000pt;"></span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="142" valign="center" colspan="2" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal" align="center" style="text-align:center;">
+                            <span style="font-family:宋体;font-size:12.0000pt;">联系人手机号</span><span style="font-family:Calibri;font-size:10.5000pt;"></span>
+                        </p>
+                    </td>
+                    <td width="142" valign="center" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal">
+                            <span style="font-family:宋体;font-size:10.5000pt;">137xxxxxxxx</span><span style="font-family:宋体;font-size:10.5000pt;"></span>
+                        </p>
+                    </td>
+                    <td width="106" valign="center" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal" align="center" style="text-align:center;">
+                            <span style="font-family:宋体;font-size:10.5000pt;">联系人电子邮箱</span><span style="font-family:Calibri;font-size:10.5000pt;"></span>
+                        </p>
+                    </td>
+                    <td width="178" valign="center" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal">
+                            <span style="font-family:宋体;font-size:10.5000pt;">xxxxxxxx@qq.com</span><span style="font-family:宋体;font-size:10.5000pt;"></span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="142" valign="center" colspan="2" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal" align="center" style="text-align:center;">
+                            <span style="font-family:宋体;font-size:12.0000pt;">单位</span><span style="font-family:宋体;font-size:12.0000pt;"></span>
+                        </p>
+                        <p class="MsoNormal" align="center" style="text-align:center;">
+                            <span style="font-family:宋体;font-size:12.0000pt;">电话</span><span style="font-family:宋体;font-size:12.0000pt;"></span>
+                        </p>
+                    </td>
+                    <td width="142" valign="center" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal">
+                            <span style="font-family:宋体;font-size:12.0000pt;">Xx-xxxxxx</span><span style="font-family:宋体;font-size:12.0000pt;"></span>
+                        </p>
+                    </td>
+                    <td width="106" valign="center" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal" align="center" style="text-align:center;">
+                            <span style="font-family:宋体;font-size:12.0000pt;">单位</span><span style="font-family:宋体;font-size:12.0000pt;"></span>
+                        </p>
+                        <p class="MsoNormal" align="center" style="text-align:center;">
+                            <span style="font-family:宋体;font-size:12.0000pt;">邮编</span><span style="font-family:宋体;font-size:12.0000pt;"></span>
+                        </p>
+                    </td>
+                    <td width="178" valign="center" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal">
+                            <span style="font-family:宋体;font-size:12.0000pt;">51xxxx</span><span style="font-family:宋体;font-size:12.0000pt;"></span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="142" valign="center" colspan="2" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal" align="center" style="text-align:center;">
+                            <span style="font-family:宋体;font-size:12.0000pt;">单位地址</span><span style="font-family:宋体;font-size:12.0000pt;"></span>
+                        </p>
+                    </td>
+                    <td width="426" valign="center" colspan="3" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal">
+                            <span style="font-family:宋体;font-size:12.0000pt;">( </span><span style="font-family:宋体;font-size:12.0000pt;">省</span><span style="font-family:宋体;font-size:12.0000pt;"> </span><span style="font-family:宋体;font-size:12.0000pt;">市</span><span style="font-family:宋体;font-size:12.0000pt;"> </span><span style="font-family:宋体;font-size:12.0000pt;">区</span><span style="font-family:宋体;font-size:12.0000pt;"> </span><span style="font-family:宋体;font-size:12.0000pt;">街道</span><span style="font-family:宋体;font-size:12.0000pt;"> </span><span style="font-family:宋体;font-size:12.0000pt;">号</span><span style="font-family:宋体;font-size:12.0000pt;">)</span><span style="font-family:宋体;font-size:12.0000pt;"></span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="142" valign="center" colspan="2" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal" align="center" style="text-align:center;">
+                            <span style="font-family:宋体;font-size:12.0000pt;">单位所在社区</span><span style="font-family:Calibri;font-size:10.5000pt;"></span>
+                        </p>
+                    </td>
+                    <td width="142" valign="center" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal">
+                            <span style="font-family:宋体;font-size:10.5000pt;">Xx<span>社区</span></span><span style="font-family:宋体;font-size:10.5000pt;"></span>
+                        </p>
+                    </td>
+                    <td width="106" valign="center" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal" align="center" style="text-align:center;">
+                            <span style="font-family:宋体;font-size:12.0000pt;">意向服务社区</span><span style="font-family:宋体;font-size:12.0000pt;"></span>
+                        </p>
+                    </td>
+                    <td width="178" valign="center" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal">
+                            <span style="font-family:宋体;font-size:12.0000pt;">（周边可涉及社区）</span><span style="font-family:宋体;font-size:12.0000pt;"></span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="142" valign="center" colspan="2" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal" align="center" style="text-align:center;">
+                            <span style="font-family:宋体;font-size:12.0000pt;">单位需求</span><span style="font-family:宋体;font-size:12.0000pt;"></span>
+                        </p>
+                    </td>
+                    <td width="426" valign="center" colspan="3" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal">
+                            <span style="font-family:宋体;font-size:12.0000pt;">□看护照顾</span><span style="font-family:宋体;font-size:12.0000pt;"> </span><span style="font-family:宋体;font-size:12.0000pt;">□家居保洁</span><span style="font-family:宋体;font-size:12.0000pt;"> </span><span style="font-family:宋体;font-size:12.0000pt;">□家教辅导</span><span style="font-family:宋体;font-size:12.0000pt;"> </span><span style="font-family:宋体;font-size:12.0000pt;">□法律咨询</span><span style="font-family:宋体;font-size:12.0000pt;"></span>
+                        </p>
+                        <p class="MsoNormal">
+                            <span style="font-family:宋体;font-size:12.0000pt;">□代办事务</span><span style="font-family:宋体;font-size:12.0000pt;"> </span><span style="font-family:宋体;font-size:12.0000pt;">□就业培训</span><span style="font-family:宋体;font-size:12.0000pt;"> </span><span style="font-family:宋体;font-size:12.0000pt;">其他：</span><span style="font-family:宋体;font-size:12.0000pt;">__________________</span><span style="font-family:宋体;font-size:12.0000pt;"></span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="142" valign="center" colspan="2" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal">
+                            <span style="font-family:宋体;font-size:12.0000pt;">单位业务范围（技能描述）</span><span style="font-family:宋体;font-size:12.0000pt;"></span>
+                        </p>
+                    </td>
+                    <td width="426" valign="center" colspan="3" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal" align="center" style="text-align:center;">
+                            <span style="font-family:宋体;font-size:12.0000pt;">注册团体所服务范围</span><span style="font-family:宋体;font-size:12.0000pt;"></span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="568" valign="top" colspan="5" style="border:1.0000pt solid windowtext;">
+                        <p class="MsoNormal">
+                            <span style="font-family:宋体;font-size:12.0000pt;"> </span>
+                        </p>
+                        <p class="MsoNormal">
+                            <span style="font-family:宋体;font-size:12.0000pt;"> </span>
+                        </p>
+                        <p class="MsoNormal">
+                            <span style="font-family:宋体;font-size:12.0000pt;"> </span><span style="font-family:宋体;font-size:12.0000pt;">经审核，以上信息属实。</span><span style="font-family:宋体;font-size:12.0000pt;"></span>
+                        </p>
+                        <p class="MsoNormal">
+                            <span style="font-family:宋体;font-size:12.0000pt;"> </span>
+                        </p>
+                        <p class="MsoNormal" align="right" style="text-indent:72.0000pt;text-align:right;">
+                            <span style="font-family:宋体;font-size:12.0000pt;"> </span>
+                        </p>
+                        <p class="MsoNormal">
+                            <span style="font-family:宋体;font-size:12.0000pt;"> </span><span style="font-family:宋体;font-size:12.0000pt;">单位法定代表人签字</span><span style="font-family:宋体;font-size:12.0000pt;">盖章</span><u><span style="font-family:宋体;font-size:12pt;"> </span></u><u><span style="font-family:宋体;font-size:12pt;"></span></u>
+                        </p>
+                        <p class="MsoNormal" align="center" style="text-indent:72.0000pt;text-align:center;">
+                            <span style="font-family:宋体;font-size:12.0000pt;"> </span><span style="font-family:宋体;font-size:12.0000pt;"></span>
+                        </p>
+                        <p class="MsoNormal" align="right" style="text-indent:72.0000pt;text-align:right;">
+                            <span style="font-family:宋体;font-size:12.0000pt;"> </span><span style="font-family:宋体;font-size:12.0000pt;">年</span><span style="font-family:宋体;font-size:12.0000pt;"> </span><span style="font-family:宋体;font-size:12.0000pt;">月</span><span style="font-family:宋体;font-size:12.0000pt;"> </span><span style="font-family:宋体;font-size:12.0000pt;">日</span>
+                        </p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+                <p></p>
+                <p class="MsoNormal" style="text-indent:2em;">
+                    <b></b>
+                </p>
+                <p class="MsoNormal" style="text-indent:2em;">
+                    <b>2、</b><b>步骤二：填表后携带以下文件交至南沙时间银行工作人员</b><b></b>
+                </p>
+                <p class="MsoNormal" style="margin-left:0pt;text-indent:2em;">
+                    单位、团体填写《南沙时间银行团体会员的申请表》后，请携带申请表及以下资料原件及复印件到南沙时间银行运营管理中心办理团体会员登记手续。
+                </p>
+                <p class="MsoNormal" style="margin-left:0pt;text-indent:2em;">
+                    1、营业执照、社会团体法人登记证书等单位证明材料复印件；
+                </p>
+                <p class="MsoNormal" style="margin-left:0pt;text-indent:2em;">
+                    2、法定代表人身份证复印件；
+                </p>
+                <p class="MsoNormal" style="margin-left:0pt;text-indent:2em;">
+                    3、经办人身份证复印件。
+                </p>
+                <p class="MsoNormal" style="text-indent:2em;">
+                    <br>
+                </p>
+                <p class="MsoNormal" style="text-indent:2em;">
+                    3、<b>步骤三：回执单盖章</b><b></b>
+                </p>
+                <p class="MsoNormal" style="text-indent:2em;">
+                    南沙时间银行工作人员收到所需资料并确认后开出盖章回执单（内含账号与密码），并在三个工作日内团体会员需交回盖章接收回执单。
+                </p>
+                <p class="MsoNormal" style="text-indent:2em;">
+                    例：
+                </p>
+                <p class="MsoNormal" style="text-indent:2em;">
+                    <img src="/timebank/upload/image/20170816/20170816095429_392.png" alt="" width="600" height="849" title="" align="">
+                </p>
+                <p style="text-indent:2em;">
+                    <br>
+                </p><br><br><p></p>
+            </div>
+        </div>
+        <!--csxm_left    e--->
+
+
+    </div>
+    <!--主要内容区    e--->
+    {include file="public/footer"}
+    <script>
+        if(screen.width>1100){
+
+            //document.getElementById("foot").style.width=screen.width-21;
+        }
+    </script>
+    <!--版权信息    e--->		<!--版权信息    e--->
+</div>
+<script type="text/javascript">
+    jQuery("#sub_menu").hide();
+</script>
+</body>
+</html>

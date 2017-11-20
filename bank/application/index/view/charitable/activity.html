@@ -1,0 +1,85 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>时间银行--公益基金</title>
+    <link type="text/css" rel="stylesheet" href="__STATIC__/index/css/index.css" />
+    <link type="text/css" href="__STATIC__/index/css/list.css" rel="stylesheet" />
+    <script type="text/javascript" src="__STATIC__/index/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/index/js/javascript.js"></script>
+</head>
+
+<body>
+<div id="container">
+    <!--tops-->
+    <script type="text/javascript">
+        //登录
+        function tologin() {
+            var url = parent.window.location.href;
+            if (url.indexOf("frontWelcome") > 0) {
+                url = "/timebank/welcome/front/mybank.action";
+            }
+            top.window.location = "/timebank/welcome/frontLogin.action?returnUrl=" + url;
+        }
+        //跳转
+        function goAction(action, target){
+            if(target == 1){
+                window.open(action);
+            }else{
+                top.window.location.href = action;
+            }
+        }
+        //显示手机二维码
+
+        function showQRCode(){
+            $("#code").show();
+        }
+        //隐藏手机二维码
+
+        function hideQRCode(){
+            $("#code").hide();
+        }
+    </script>
+    
+{include file="public/header"}
+    <div id="main">
+        <div class="fenl">
+            <div class="qbfl_bt">南沙区慈善会</div>
+            <ul class="gyjj_ej">
+                <li><a href="{:url('charitable/index')}">基金介绍</a></li>
+                <li><a href="{:url('charitable/moneyopen')}">财务公开</a></li>
+                <li><a href="{:url('charitable/notice')}">通知公告</a></li>
+                <li><a href="{:url('charitable/activity')}">活动报道</a></li>
+            </ul>
+        </div>
+        <div class="gyjj_list">
+            <div class="csxm_title"><p>活动报道</p></div>
+            {volist name="data" id="vo"}
+            <div class="cs_list">
+                <p class="cssj">
+                    
+                    <a href="{:url('charitable/detail2',['id'=>$vo.id])}" target="_blank">{$vo.title}</a>
+                    <span style="float:right;padding-right:10px;">{$vo.time|date="Y-m-d",###}</span>
+                </p>
+            </div>
+            {/volist}
+           	{:pagination($data)}
+            <!--分页  s-->
+            </div>
+        </div>
+    </div>
+
+    {include file="public/footer"}
+    <script>
+        if(screen.width>1100){
+
+            //document.getElementById("foot").style.width=screen.width-21;
+        }
+    </script>
+    <!--版权信息    e--->	    <!--版权信息    e--->
+</body>
+<script type="text/javascript">
+    jQuery("#sub_menu").hide();
+</script>
+</html>

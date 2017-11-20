@@ -1,0 +1,53 @@
+<!--包含头部文件-->
+{include file="public/header" /}
+<div class="cl pd-5 bg-1 bk-gray mt-20"> 审核信息</div>
+<article class="page-container">
+	<form class="form form-horizontal" id="form-article-add" method="post">
+	基本信息：
+		
+		
+        <input type="hidden" name="id" value="{$data.id}">
+        <div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>专业证书1：</label>
+
+				 <img  id="upload_org_code_img" src="{$data.certificate1}" width="150" height="150">
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>专业证书2：</label>
+
+				 <img  id="upload_org_code_img" src="{$data.certificate2}" width="150" height="150">
+		</div>
+		
+		
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+				<a class="btn btn-primary radius Hui-iconfont" href="{:url('certificate/edit', ['id'=>$data.id, 'status'=>1])}">&#xe632;通过</a> 	
+				<a class="btn btn-primary radius Hui-iconfont" href="{:url('certificate/edit', ['id'=>$data.id, 'status'=>2])}">&#xe632;不通过</a>
+			</div>
+		</div>
+	</form>
+</article>
+<script>
+/**定义页面全局变量**/
+var SCOPE = {
+	"city_url" : "{:url('api/city/getCitysByParentId')}",
+	"category_url" : "{:url('api/category/getCategoryByParentId')}",
+	"uploadify_swf" : "__STATIC__/admin/uploadify/uploadify.swf",
+    "image_upload" : "{:url('api/image/upload')}",
+};
+
+</script>
+<!--包含头部文件-->
+{include file="public/footer" /}
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/ueditor/1.4.3/ueditor.config.js"></script>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
+<script type="text/javascript" src="__STATIC__/admin/hui/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+<script src="__STATIC__/admin/hui/lib/My97DatePicker/WdatePicker.js"></script>
+<script>
+$(function(){
+	var ue = UE.getEditor('editor');
+	var ue = UE.getEditor('editor2');
+});
+</script>
+</body>
+</html>

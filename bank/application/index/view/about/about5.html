@@ -1,0 +1,383 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="__STATIC__/index/css/index.css" />
+    <script type="text/javascript" src="__STATIC__/index/js/jquery-1.7.2.min.js"></script>
+    <style type="text/css">
+        /*-----主要内容  s ----*/
+        #main {
+            width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+        }
+        /*-慈善项目  s--*/
+        #csxm_left {
+            width: 100%;
+            float: left;
+            margin-bottom: 10px;
+            border: solid 1px #dbdbdb;
+        }
+
+        .location {
+            width: 100%;
+            height: 30px;
+            background-color: #f9f9f9;
+        }
+
+        .location p {
+            padding-left: 5px;
+            padding-top: 8px;
+            font-size: 12px;
+            color: #444;
+        }
+
+        /*具体慈善内容*/
+        .cs_content {
+            width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .content_title {
+            font-size: 18px;
+            text-align: center;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .con_xx {
+            width: 900px;
+            height: 30px;
+            border-bottom: dashed 1px #dbdbdb;
+        }
+
+        .con_xx p {
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            padding-top: 7px;
+        }
+
+        .p1 {
+            padding-top: 15px;
+            font-size: 12px;
+            color: #444;
+            line-height: 22px;
+        }
+
+        /*-慈善项目  e--*/
+
+        /*-右边  s--*/
+        #csxm_right {
+            width: 230px;
+            height: 600px;
+            float: right;
+        }
+
+        .table_top {
+            border-bottom: solid 1px #dcdcdc;
+        }
+
+        .xw_hover {
+            background-color: #ff9300;
+            font-size: 13px;
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .xw_now {
+            font-size: 13px;
+            color: #bbbbbb;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .list1 {
+            width: 218px;
+            height: 28px;
+            margin-left: auto;
+            margin-right: auto;
+            border-bottom: dashed 1px #ccc;
+        }
+
+        .list1 a {
+            font-size: 12px;
+            color: #444444;
+            text-decoration: none;
+        }
+
+        .list1 a:hover {
+            font-size: 12px;
+            color: #f00;
+        }
+        /*新闻动态  e*/
+        /*委托服务动态   s*/
+        .zxxq_top {
+            border-bottom: solid 1px #dbdbdb;
+        }
+
+        .wtfw {
+            width: 228px;
+            height: 209px;
+            border: solid 1px #dbdbdb;
+            float: right;
+        }
+
+        .list_box {
+            width: 218px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .list3 {
+            width: 208px;
+            height: 31px;
+            margin-left: auto;
+            margin-right: auto;
+            border-bottom: dashed 1px #ccc;
+        }
+
+        .list3 a,.list3 {
+            font-size: 12px;
+            color: #444444;
+            text-decoration: none;
+        }
+
+        .list3 a:hover {
+            font-size: 12px;
+            color: #f00;
+        }
+
+        .lm_title {
+            font-size: 16px;
+            color: #c75f02;
+            font-weight: 700;
+        }
+
+        .more a {
+            font-size: 12px;
+            color: #444444;
+        }
+        /*委托服务动态   e*/
+        /*-右边  e--*/
+    </style>
+    <script type="text/javascript">
+        //下载附件
+        function downloadNotice(action) {
+            document.mainform.action = action;
+            document.mainform.submit();
+        }
+    </script>
+</head>
+<body>
+<div id="container">
+    <!--tops-->
+    <script type="text/javascript">
+        //登录
+        function tologin() {
+            var url = parent.window.location.href;
+            if (url.indexOf("frontWelcome") > 0) {
+                url = "/timebank/welcome/front/mybank.action";
+            }
+            top.window.location = "/timebank/welcome/frontLogin.action?returnUrl=" + url;
+        }
+        //跳转
+        function goAction(action, target){
+            if(target == 1){
+                window.open(action);
+            }else{
+                top.window.location.href = action;
+            }
+        }
+        //显示手机二维码
+
+        function showQRCode(){
+            $("#code").show();
+        }
+        //隐藏手机二维码
+
+        function hideQRCode(){
+            $("#code").hide();
+        }
+    </script>
+    {include file="public/header"}
+
+    <!--主要内容区    s--->
+    <div id="main" style="height: 800px;">
+        <!--csxm_left    s--->
+        <div id="csxm_left">
+            <form action="" method="post" id="mainform" name="mainform">
+                <input type="hidden" name="articleId" id="articleId"
+                       value="358" />
+            </form>
+            <div class="location">
+                <p>当前位置：首页-关于我们</p>
+            </div>
+
+            <div class="cs_content">
+                <p class="content_title">南沙时间银行运营中心</p>
+                <div class="con_xx">
+                    <p>发布时间：2016-11-09</p>
+                </div>
+                <p class="p1" style="padding-bottom: 19px;"></p><blockquote>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>各位朋友</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>，欢迎</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>进入</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>南沙时间银行运营中心</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>展示厅</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>首先您看到的是</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>我们南沙时间银行</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>水晶字体和</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">logo。整体造型像是一个</span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>红色</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>心形的钟表，寓意</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>着</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>南沙时间银行的核心是与时间相关，</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>也代表了</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>南沙时间银行是具有公益性，</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>而里面的</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>指针是一对相握的手，</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>代表了</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>南沙时间银行</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">“</span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>邻里相守，助人自助</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">”的服务宗旨</span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>。</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">也体现了我们平台</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">“合作共赢”的</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>方针。</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="font-family:仿宋_GB2312;font-size:16pt;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">（第一展牌</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">-简介）</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="font-family:仿宋_GB2312;font-size:16pt;"><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"> </span><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">南沙时间银行</span></span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">是由</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">“</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">互联网</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">+社区服务”的模式创新搭建而成</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>，是</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>以服务时间的存储和支取为基础</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>的。</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>政府、企事业单位、社会团体、居民个人均可通过南沙时间银行平台发布</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>需求活动、</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>承接服务。</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="font-family:仿宋_GB2312;font-size:16pt;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">（第二展牌</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">-理念）</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">“多方共举，服务共通，利益共享，社群共融”</span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>是我们南沙时间银行的理念</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>。</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="font-family:仿宋_GB2312;font-size:16pt;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">（第三展牌</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">-优势）</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>而这里是我们时间银行一些</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>相对有特色</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>的优势</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>。</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <!--[if !supportLists]--><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">1、</span></span><!--[endif]--><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>以时间换时间，以服务换服务；</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <!--[if !supportLists]--><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">2、</span></span><!--[endif]--><span style="font-family:仿宋_GB2312;font-size:16pt;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">社会公益服务</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">“随时、随地、随心”；</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <!--[if !supportLists]--><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">3、</span></span><!--[endif]--><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>变传统给予式服务为以需求为导向的精准服务；</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <!--[if !supportLists]--><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">4、</span></span><!--[endif]--><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>双向选择、双方评价、公平有序，让社区公益服务更有保障；</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <!--[if !supportLists]--><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">5、</span></span><!--[endif]--><span style="font-family:仿宋_GB2312;font-size:16pt;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">公众监督、数据即时公开</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">;</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <!--[if !supportLists]--><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">6、</span></span><!--[endif]--><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>团体会员可高效管理团队成员和开展活动</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>。</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="font-family:仿宋_GB2312;font-size:16pt;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">（第四展牌</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">-平台）</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>会员可以通过电脑、手机平板等移动智能终端以及终端柜员机等设备登录南沙时间银行系统进行操作，也可以</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>关注</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>网站、</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>微博</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>、微信公众号等了解南沙时间银行的动态，目前南沙时间银行已形成了网站、媒体、移动终端全覆盖的公共服务平台。</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="font-family:仿宋_GB2312;font-size:16pt;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">（第五展牌</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">-架构）</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>南沙时间银行的架构，简单</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>分</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>为三层组织。</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>分别由</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>政府监管，运营中心运行</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>管理</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>，社区服务站</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>线下</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>支撑。</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <b><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;font-weight:bold;"><span>（弧度墙）</span></span></b><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>这</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>边</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>我们将南沙时间银行系统平台的整体结构以及基本使用流程通过图形表现出来，希望能让各位专家和领导对南沙时间银行有一个相对整体一些的了解。</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>我们的架构一共分为</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">5</span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>层。</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>分别是数据层、交换层、功能层、服务层还有应用层。</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>数据层、交换层、功能层作为我们平台支撑，而服务层便是我们会员的平台操作，应用层是我们平台的端口和会员组成。</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>三个流程图分别</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>是个人会员常用到的</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>注册、需求发布与承接，</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>礼品</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>兑换流程。</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="font-family:仿宋_GB2312;font-size:16pt;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">我们南沙时间银行</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">“兑换礼品”</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>这个功能设置主要是考虑到外来务工人群的个性需求，对吸引他们通过南沙时间银行项目平台参与社会公益服务起到很好的推进作用。</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>团体会员的设置是南沙时间银行的一个重要特色，不论政府机关、企事业单位、社会组织均可在南沙时间银行注册成为团体会员，并以团体的名义开展各种活动，同时可以对自己的团队进行管理。</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>注册团体会员不能采用自助注册的方式，需要先填写《南沙时间银行团体会员申请表》并提交相关资料（营业执照、社会团体法人登记证书等单位证明材料，法定代表人身份证，经办人身份证）的复印件及原件到南沙时间银行运营管理中心办理。</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>注册成功后，团体会员的管理员还需要对</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>完善</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>团体会员账户</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>的</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>资料和其它相关设置，并将</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>自己</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>单位的个人会员加进来。这些工作完成后，团体会员就可以在南沙时间银行系统平台开展服务啦。</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>此外，团体会员还可以实现对内部成员的管理、</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>并组织成员参与活动，这</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>基本可以满足单位管理本单位社会公益服务方面的绝大多数需求。</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <b><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;font-weight:bold;"><span>（水晶字）</span></span></b><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">“邻里相守 助人自助”</span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>是我们南沙时间银行的理念。</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <b><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;font-weight:bold;"><span>（活动站点墙）</span></span></b><b><span style="font-family:黑体;font-size:16pt;font-weight:bold;"></span></b>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>南沙时间银行项目开展以来的一些缩影。</span></span><b><span style="font-family:黑体;font-size:16pt;font-weight:bold;"></span></b>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <b><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;font-weight:bold;"><span>（目标）</span></span></b><b><span style="font-family:黑体;font-size:16pt;font-weight:bold;"></span></b>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="font-family:仿宋_GB2312;font-size:16pt;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">南沙时间银行的目标，期望今后能发展成为一个</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">“五合一”的公共服务支撑平台。</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">1、</span><span style="font-family:仿宋_GB2312;font-size:16pt;"> </span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>政府及社会各界开展社会服务的支撑平台；</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">2、</span><span style="font-family:仿宋_GB2312;font-size:16pt;"> </span><span style="font-family:仿宋_GB2312;font-size:16pt;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">公民参与公益服务的支撑平台</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">;</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">3、</span><span style="font-family:仿宋_GB2312;font-size:16pt;"> </span><span style="font-family:仿宋_GB2312;font-size:16pt;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">社区养老支撑平台</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">;</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">4、</span><span style="font-family:仿宋_GB2312;font-size:16pt;"> </span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>社区居民的互助服务支撑平台；</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">5、</span><span style="font-family:仿宋_GB2312;font-size:16pt;"> </span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>有序可靠的家政服务支撑平台。</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="font-family:仿宋_GB2312;font-size:16pt;"><span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">为此，南沙时间银行会奉行</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;">“公平、开放、合作、共赢”的原则，也希望各位专家、领导能给我们多一些指教。</span></span><span style="font-family:仿宋_GB2312;font-size:16pt;"></span>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <b><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;font-weight:bold;"><span>（制度）</span></span></b><b><span style="font-family:黑体;font-size:16pt;font-weight:bold;"></span></b>
+                </p>
+                <p class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>这些是南沙时间银行部分规章制度，这里还有一份南沙时间银行的制度汇编，由于南沙时间银行是一个全新的系统，很多地方还在不断摸索完善，规章制度方面也同样在不断完善补充</span></span><span style="line-height:2;font-family:Microsoft YaHei;font-size:16px;"><span>。</span></span>
+                </p>
+                <p align="center" class="MsoNormal" style="text-align:left;text-indent:32pt;">
+                    <img src="/timebank/upload/image/20161113/20161113153502_164.png" alt="" width="900" height="307" title="" align="">
+                </p>
+            </blockquote>
+                <!--EndFragment--><br><br><p></p>
+            </div>
+        </div>
+        <!--csxm_left    e--->
+
+
+    </div>
+    <!--主要内容区    e--->
+    {include file="public/footer"}
+    <script>
+        if(screen.width>1100){
+
+            //document.getElementById("foot").style.width=screen.width-21;
+        }
+    </script>
+    <!--版权信息    e--->		<!--版权信息    e--->
+</div>
+<script type="text/javascript">
+    jQuery("#sub_menu").hide();
+</script>
+</body>
+</html>

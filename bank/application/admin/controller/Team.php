@@ -19,6 +19,7 @@ class  Team extends Controller {
             //提交的数据入库
             $localData = [
                 'company_name' => $data['company_name'],
+                'logo' => $data['logo'],
                 'content' =>  $data['content'],
                 'time' => time(),
             ];
@@ -40,8 +41,15 @@ class  Team extends Controller {
         if(!empty($data)){
             //修改时间
             $data['time'] = time();
-            //入库
-            $re = db('team')->where('id',$data['id'])->update($data);
+            //判断是否上传图片
+            if(!empty($data['logo'])){
+                $re = db('team')->where('id',$data['id'])->update($data);
+            }else{
+                //获取图片路径
+                $image = db('team')->where('id',$data['id'])->find()['logo'];
+                $data['logo'] = $image;
+                $re = db('team')->where('id',$data['id'])->update($data);
+            }
             //判断是否修改成功
             if($re){
                 $this->success('修改成功','team/index');

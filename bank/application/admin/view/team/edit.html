@@ -12,6 +12,14 @@
 			</div>
 		</div>
 		<div class="row cl">
+              <label class="form-label col-xs-4 col-sm-2">公司logo：</label>
+              <div class="formControls col-xs-8 col-sm-9">
+                <input id="file_upload"  type="file" multiple="true" >
+                <img style="display: block" id="upload_org_code_img" src="{$local.logo}" width="150" height="150">
+                <input id="file_upload_image" name="logo" type="hidden" multiple="true" value="">
+              </div>
+        </div>
+		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>公司简介：</label>
 			<div class="formControls col-xs-8 col-sm-3">
 				<textarea rows="3" cols="20" name="content">{$local.content}</textarea>

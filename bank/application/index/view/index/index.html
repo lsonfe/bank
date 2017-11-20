@@ -36,6 +36,9 @@
         body {
             background: #FFFFFF top center no-repeat;
         }
+		.sub_menu_ul_li{
+    		position: relative;
+		}
         .sweetMenuAnchor {
             border-top: 1px solid #ffffff;
             border-right: 1px solid #ffffff;
@@ -148,254 +151,28 @@
                     <!--隐藏菜单  s-->
                     <div class="sub_menu" id="sub_menu" style="z-index: 999">
                         <ul class="sub_menu_ul">
-                            <li id="sub_menu_ul_li_101" class="sub_menu_ul_li" onmouseover="showSecondMenu('101','11');" onmouseout="hiddenSecondMenu('101');">
-                                <a id="menuspan_101" class="sub_menu_ul_li_a" href="javascript:goDemand('319');">
+                        	{volist name="one" id="vo" key="k"}
+                            <li id="sub_menu_ul_li_{if($k<10)}10{$k}{else/}1{$k}{/if}" class="sub_menu_ul_li" onmouseover="showSecondMenu('10{if($k<10)}10{$k}{else/}1{$k}{/if}','11');" onmouseout="hiddenSecondMenu('10{if($k<10)}10{$k}{else/}1{$k}{/if}');">
+                                <a id="menuspan_10{if($k<10)}10{$k}{else/}1{$k}{/if}" class="sub_menu_ul_li_a" href="javascript:goDemand('319');">
 				<span class="sub_title">
 					<p class="sub_menu_ul_li_p" style="padding-top:7px;">
 						<img src="__STATIC__/index/images/icon_bj.jpg" class="left_icon" />
-						<font style="float:left;" id="span_319">公共服务</font>
+						<font style="float:left;" id="span_319">{$vo.name}</font>
 						<img src="__STATIC__/index/images/dot.gif" align="absmiddle" class="right_icon" />
 					</p>
 				</span>
                                 </a>
                                 <!--�����˵�  s-->
-                                <div id="second_menu101" style="display: none; position: absolute; background-color: #fff; _width: 342px; min-width: 342px; min-height: 40px; height: auto; z-index: 100; left: 166px; top: 38px; border-bottom: solid 2px #f27302; border-top: solid 2px #f27302; border-right: solid 2px #f27302;">
+                                <div id="second_menu10{if($k<10)}10{$k}{else/}1{$k}{/if}" style="display: none; position: absolute; background-color: #fff; _width: 342px; min-width: 342px; min-height: 40px; height: auto; z-index: 100; left: 166px; top: -6px; border-bottom: solid 2px #f27302; border-top: solid 2px #f27302; border-right: solid 2px #f27302;">
                                     <ul class="second_menu_ul">
-                                        <li><a href="javascript: goSecondDemand('320', '319')">宣传</a></li>
-                                        <li><a href="javascript: goSecondDemand('323', '319')">环境清洁</a></li>
-                                        <li><a href="javascript: goSecondDemand('324', '319')">公共卫生</a></li>
-                                        <li><a href="javascript: goSecondDemand('325', '319')">文体活动</a></li>
-                                        <li><a href="javascript: goSecondDemand('334', '319')">维修养护</a></li>
-                                        <li><a href="javascript: goSecondDemand('348', '319')">方案征集</a></li>
-                                        <li><a href="javascript: goSecondDemand('349', '319')">问卷调查</a></li>
+                                    	{volist name="vo.two" id="vi"}
+                                        <li><a href="javascript: goSecondDemand('320', '319')">{$vi.name}</a></li>
+                                        {/volist}
                                     </ul>
                                 </div>
                                 <!--�����˵�  e-->
                             </li>
-                            <li id="sub_menu_ul_li_102" class="sub_menu_ul_li" onmouseover="showSecondMenu('102','11');" onmouseout="hiddenSecondMenu('102');">
-                                <a id="menuspan_102" class="sub_menu_ul_li_a" href="javascript:goDemand('1');">
-				<span class="sub_title">
-					<p class="sub_menu_ul_li_p" style="padding-top:7px;">
-						<img src="__STATIC__/index/images/icon_bj.jpg" class="left_icon" />
-						<font style="float:left;" id="span_1">关爱服务</font>
-						<img src="__STATIC__/index/images/dot.gif" align="absmiddle" class="right_icon" />
-					</p>
-				</span>
-                                </a>
-                                <!--�����˵�  s-->
-                                <div id="second_menu102" style="display: none; position: absolute; background-color: #fff; _width: 342px; min-width: 342px; min-height: 40px; height: auto; z-index: 100; left: 166px; top: 38px; border-bottom: solid 2px #f27302; border-top: solid 2px #f27302; border-right: solid 2px #f27302;">
-                                    <ul class="second_menu_ul">
-                                        <li><a href="javascript: goSecondDemand('147', '1')">探访</a></li>
-                                        <li><a href="javascript: goSecondDemand('148', '1')">清洁卫生</a></li>
-                                        <li><a href="javascript: goSecondDemand('149', '1')">体检</a></li>
-                                        <li><a href="javascript: goSecondDemand('183', '1')">康复训练</a></li>
-                                        <li><a href="javascript: goSecondDemand('326', '1')">户外陪伴</a></li>
-                                        <li><a href="javascript: goSecondDemand('327', '1')">饮食起居</a></li>
-                                    </ul>
-                                </div>
-                                <!--�����˵�  e-->
-                            </li>
-                            <li id="sub_menu_ul_li_103" class="sub_menu_ul_li" onmouseover="showSecondMenu('103','11');" onmouseout="hiddenSecondMenu('103');">
-                                <a id="menuspan_103" class="sub_menu_ul_li_a" href="javascript:goDemand('6');">
-				<span class="sub_title">
-					<p class="sub_menu_ul_li_p" style="padding-top:7px;">
-						<img src="__STATIC__/index/images/icon_bj.jpg" class="left_icon" />
-						<font style="float:left;" id="span_6">家政服务</font>
-						<img src="__STATIC__/index/images/dot.gif" align="absmiddle" class="right_icon" />
-					</p>
-				</span>
-                                </a>
-                                <!--�����˵�  s-->
-                                <div id="second_menu103" style="display: none; position: absolute; background-color: #fff; _width: 342px; min-width: 342px; min-height: 40px; height: auto; z-index: 100; left: 166px; top: 38px; border-bottom: solid 2px #f27302; border-top: solid 2px #f27302; border-right: solid 2px #f27302;">
-                                    <ul class="second_menu_ul">
-                                        <li><a href="javascript: goSecondDemand('150', '6')">清洁卫生</a></li>
-                                        <li><a href="javascript: goSecondDemand('151', '6')">买菜做饭</a></li>
-                                        <li><a href="javascript: goSecondDemand('152', '6')">月嫂保姆</a></li>
-                                        <li><a href="javascript: goSecondDemand('153', '6')">钟点工</a></li>
-                                        <li><a href="javascript: goSecondDemand('154', '6')">看护病人</a></li>
-                                        <li><a href="javascript: goSecondDemand('184', '6')">看护儿童</a></li>
-                                    </ul>
-                                </div>
-                                <!--�����˵�  e-->
-                            </li>
-                            <li id="sub_menu_ul_li_104" class="sub_menu_ul_li" onmouseover="showSecondMenu('104','11');" onmouseout="hiddenSecondMenu('104');">
-                                <a id="menuspan_104" class="sub_menu_ul_li_a" href="javascript:goDemand('12');">
-				<span class="sub_title">
-					<p class="sub_menu_ul_li_p" style="padding-top:7px;">
-						<img src="__STATIC__/index/images/icon_bj.jpg" class="left_icon" />
-						<font style="float:left;" id="span_12">家庭维修</font>
-						<img src="__STATIC__/index/images/dot.gif" align="absmiddle" class="right_icon" />
-					</p>
-				</span>
-                                </a>
-                                <!--�����˵�  s-->
-                                <div id="second_menu104" style="display: none; position: absolute; background-color: #fff; _width: 342px; min-width: 342px; min-height: 40px; height: auto; z-index: 100; left: 166px; top: 38px; border-bottom: solid 2px #f27302; border-top: solid 2px #f27302; border-right: solid 2px #f27302;">
-                                    <ul class="second_menu_ul">
-                                        <li><a href="javascript: goSecondDemand('159', '12')">家电类维修</a></li>
-                                        <li><a href="javascript: goSecondDemand('160', '12')">水道类维修</a></li>
-                                        <li><a href="javascript: goSecondDemand('161', '12')">家装养护类</a></li>
-                                        <li><a href="javascript: goSecondDemand('162', '12')">服装鞋帽类</a></li>
-                                        <li><a href="javascript: goSecondDemand('186', '12')">家具类维修</a></li>
-                                    </ul>
-                                </div>
-                                <!--�����˵�  e-->
-                            </li>
-                            <li id="sub_menu_ul_li_105" class="sub_menu_ul_li" onmouseover="showSecondMenu('105','11');" onmouseout="hiddenSecondMenu('105');">
-                                <a id="menuspan_105" class="sub_menu_ul_li_a" href="javascript:goDemand('11');">
-				<span class="sub_title">
-					<p class="sub_menu_ul_li_p" style="padding-top:7px;">
-						<img src="__STATIC__/index/images/icon_bj.jpg" class="left_icon" />
-						<font style="float:left;" id="span_11">培训教育</font>
-						<img src="__STATIC__/index/images/dot.gif" align="absmiddle" class="right_icon" />
-					</p>
-				</span>
-                                </a>
-                                <!--�����˵�  s-->
-                                <div id="second_menu105" style="display: none; position: absolute; background-color: #fff; _width: 342px; min-width: 342px; min-height: 40px; height: auto; z-index: 100; left: 166px; top: 38px; border-bottom: solid 2px #f27302; border-top: solid 2px #f27302; border-right: solid 2px #f27302;">
-                                    <ul class="second_menu_ul">
-                                        <li><a href="javascript: goSecondDemand('155', '11')">课程辅导</a></li>
-                                        <li><a href="javascript: goSecondDemand('156', '11')">艺术类</a></li>
-                                        <li><a href="javascript: goSecondDemand('157', '11')">体育类</a></li>
-                                        <li><a href="javascript: goSecondDemand('158', '11')">成人教育</a></li>
-                                        <li><a href="javascript: goSecondDemand('185', '11')">老年兴趣</a></li>
-                                        <li><a href="javascript: goSecondDemand('292', '11')">家教补习</a></li>
-                                    </ul>
-                                </div>
-                                <!--�����˵�  e-->
-                            </li>
-                            <li id="sub_menu_ul_li_106" class="sub_menu_ul_li" onmouseover="showSecondMenu('106','11');" onmouseout="hiddenSecondMenu('106');">
-                                <a id="menuspan_106" class="sub_menu_ul_li_a" href="javascript:goDemand('288');">
-				<span class="sub_title">
-					<p class="sub_menu_ul_li_p" style="padding-top:7px;">
-						<img src="__STATIC__/index/images/icon_bj.jpg" class="left_icon" />
-						<font style="float:left;" id="span_288">医疗保健</font>
-						<img src="__STATIC__/index/images/dot.gif" align="absmiddle" class="right_icon" />
-					</p>
-				</span>
-                                </a>
-                                <!--�����˵�  s-->
-                                <div id="second_menu106" style="display: none; position: absolute; background-color: #fff; _width: 342px; min-width: 342px; min-height: 40px; height: auto; z-index: 100; left: 166px; top: 38px; border-bottom: solid 2px #f27302; border-top: solid 2px #f27302; border-right: solid 2px #f27302;">
-                                    <ul class="second_menu_ul">
-                                        <li><a href="javascript: goSecondDemand('295', '288')">医疗咨询</a></li>
-                                        <li><a href="javascript: goSecondDemand('296', '288')">辅助治疗</a></li>
-                                        <li><a href="javascript: goSecondDemand('297', '288')">专业看护</a></li>
-                                        <li><a href="javascript: goSecondDemand('328', '288')">养生调理</a></li>
-                                        <li><a href="javascript: goSecondDemand('329', '288')">保健理疗</a></li>
-                                    </ul>
-                                </div>
-                                <!--�����˵�  e-->
-                            </li>
-                            <li id="sub_menu_ul_li_107" class="sub_menu_ul_li" onmouseover="showSecondMenu('107','11');" onmouseout="hiddenSecondMenu('107');">
-                                <a id="menuspan_107" class="sub_menu_ul_li_a" href="javascript:goDemand('14');">
-				<span class="sub_title">
-					<p class="sub_menu_ul_li_p" style="padding-top:7px;">
-						<img src="__STATIC__/index/images/icon_bj.jpg" class="left_icon" />
-						<font style="float:left;" id="span_14">文化艺术</font>
-						<img src="__STATIC__/index/images/dot.gif" align="absmiddle" class="right_icon" />
-					</p>
-				</span>
-                                </a>
-                                <!--�����˵�  s-->
-                                <div id="second_menu107" style="display: none; position: absolute; background-color: #fff; _width: 342px; min-width: 342px; min-height: 40px; height: auto; z-index: 100; left: 166px; top: 38px; border-bottom: solid 2px #f27302; border-top: solid 2px #f27302; border-right: solid 2px #f27302;">
-                                    <ul class="second_menu_ul">
-                                        <li><a href="javascript: goSecondDemand('168', '14')">文玩印章</a></li>
-                                        <li><a href="javascript: goSecondDemand('169', '14')">乐器维修</a></li>
-                                        <li><a href="javascript: goSecondDemand('170', '14')">服装道具</a></li>
-                                        <li><a href="javascript: goSecondDemand('171', '14')">陪练</a></li>
-                                        <li><a href="javascript: goSecondDemand('172', '14')">书法绘画</a></li>
-                                        <li><a href="javascript: goSecondDemand('293', '14')">字画装裱</a></li>
-                                        <li><a href="javascript: goSecondDemand('294', '14')">模特招募</a></li>
-                                        <li><a href="javascript: goSecondDemand('330', '14')">古玩鉴赏</a></li>
-                                    </ul>
-                                </div>
-                                <!--�����˵�  e-->
-                            </li>
-                            <li id="sub_menu_ul_li_108" class="sub_menu_ul_li" onmouseover="showSecondMenu('108','11');" onmouseout="hiddenSecondMenu('108');">
-                                <a id="menuspan_108" class="sub_menu_ul_li_a" href="javascript:goDemand('289');">
-				<span class="sub_title">
-					<p class="sub_menu_ul_li_p" style="padding-top:7px;">
-						<img src="__STATIC__/index/images/icon_bj.jpg" class="left_icon" />
-						<font style="float:left;" id="span_289">运动休闲</font>
-						<img src="__STATIC__/index/images/dot.gif" align="absmiddle" class="right_icon" />
-					</p>
-				</span>
-                                </a>
-                                <!--�����˵�  s-->
-                                <div id="second_menu108" style="display: none; position: absolute; background-color: #fff; _width: 342px; min-width: 342px; min-height: 40px; height: auto; z-index: 100; left: 166px; top: 38px; border-bottom: solid 2px #f27302; border-top: solid 2px #f27302; border-right: solid 2px #f27302;">
-                                    <ul class="second_menu_ul">
-                                        <li><a href="javascript: goSecondDemand('298', '289')">专业指导</a></li>
-                                        <li><a href="javascript: goSecondDemand('299', '289')">运动器材</a></li>
-                                        <li><a href="javascript: goSecondDemand('300', '289')">陪练代练</a></li>
-                                    </ul>
-                                </div>
-                                <!--�����˵�  e-->
-                            </li>
-                            <li id="sub_menu_ul_li_109" class="sub_menu_ul_li" onmouseover="showSecondMenu('109','11');" onmouseout="hiddenSecondMenu('109');">
-                                <a id="menuspan_109" class="sub_menu_ul_li_a" href="javascript:goDemand('290');">
-				<span class="sub_title">
-					<p class="sub_menu_ul_li_p" style="padding-top:7px;">
-						<img src="__STATIC__/index/images/icon_bj.jpg" class="left_icon" />
-						<font style="float:left;" id="span_290">上门服务</font>
-						<img src="__STATIC__/index/images/dot.gif" align="absmiddle" class="right_icon" />
-					</p>
-				</span>
-                                </a>
-                                <!--�����˵�  s-->
-                                <div id="second_menu109" style="display: none; position: absolute; background-color: #fff; _width: 342px; min-width: 342px; min-height: 40px; height: auto; z-index: 100; left: 166px; top: 38px; border-bottom: solid 2px #f27302; border-top: solid 2px #f27302; border-right: solid 2px #f27302;">
-                                    <ul class="second_menu_ul">
-                                        <li><a href="javascript: goSecondDemand('304', '290')">日杂商品速递</a></li>
-                                        <li><a href="javascript: goSecondDemand('305', '290')">订餐送餐</a></li>
-                                        <li><a href="javascript: goSecondDemand('306', '290')">代驾拼车</a></li>
-                                        <li><a href="javascript: goSecondDemand('307', '290')">美容化妆</a></li>
-                                        <li><a href="javascript: goSecondDemand('331', '290')">家事料理</a></li>
-                                    </ul>
-                                </div>
-                                <!--�����˵�  e-->
-                            </li>
-                            <li id="sub_menu_ul_li_110" class="sub_menu_ul_li" onmouseover="showSecondMenu('110','11');" onmouseout="hiddenSecondMenu('110');">
-                                <a id="menuspan_110" class="sub_menu_ul_li_a" href="javascript:goDemand('15');">
-				<span class="sub_title">
-					<p class="sub_menu_ul_li_p" style="padding-top:7px;">
-						<img src="__STATIC__/index/images/icon_bj.jpg" class="left_icon" />
-						<font style="float:left;" id="span_15">专业技术</font>
-						<img src="__STATIC__/index/images/dot.gif" align="absmiddle" class="right_icon" />
-					</p>
-				</span>
-                                </a>
-                                <!--�����˵�  s-->
-                                <div id="second_menu110" style="display: none; position: absolute; background-color: #fff; _width: 342px; min-width: 342px; min-height: 40px; height: auto; z-index: 100; left: 166px; top: 38px; border-bottom: solid 2px #f27302; border-top: solid 2px #f27302; border-right: solid 2px #f27302;">
-                                    <ul class="second_menu_ul">
-                                        <li><a href="javascript: goSecondDemand('173', '15')">IT行业</a></li>
-                                        <li><a href="javascript: goSecondDemand('174', '15')">美工设计</a></li>
-                                        <li><a href="javascript: goSecondDemand('176', '15')">专业写作</a></li>
-                                        <li><a href="javascript: goSecondDemand('177', '15')">法律援助</a></li>
-                                        <li><a href="javascript: goSecondDemand('332', '15')">财务理财</a></li>
-                                        <li><a href="javascript: goSecondDemand('333', '15')">建筑装修</a></li>
-                                        <li><a href="javascript: goSecondDemand('335', '15')">农牧渔业</a></li>
-                                        <li><a href="javascript: goSecondDemand('336', '15')">其它行业</a></li>
-                                    </ul>
-                                </div>
-                                <!--�����˵�  e-->
-                            </li>
-                            <li id="sub_menu_ul_li_111" class="sub_menu_ul_li" onmouseover="showSecondMenu('111','11');" onmouseout="hiddenSecondMenu('111');">
-                                <a id="menuspan_111" class="sub_menu_ul_li_a" href="javascript:goDemand('291');">
-				<span class="sub_title">
-					<p class="sub_menu_ul_li_p" style="padding-top:7px;">
-						<img src="__STATIC__/index/images/icon_bj.jpg" class="left_icon" />
-						<font style="float:left;" id="span_291">定制服务</font>
-						<img src="__STATIC__/index/images/dot.gif" align="absmiddle" class="right_icon" />
-					</p>
-				</span>
-                                </a>
-                                <!--�����˵�  s-->
-                                <div id="second_menu111" style="display: none; position: absolute; background-color: #fff; _width: 342px; min-width: 342px; min-height: 40px; height: auto; z-index: 100; left: 166px; top: 38px; border-bottom: solid 2px #f27302; border-top: solid 2px #f27302; border-right: solid 2px #f27302;">
-                                    <ul class="second_menu_ul">
-                                        <li><a href="javascript: goSecondDemand('350', '291')">活动落实</a></li>
-                                        <li><a href="javascript: goSecondDemand('19', '291')">定制服务</a></li>
-                                    </ul>
-                                </div>
-                                <!--�����˵�  e-->
-                            </li>
+                            {/volist}
                         </ul>
                     </div>
 
@@ -473,25 +250,11 @@
                             <a>6</a>
                         </div>
                         <ul>
+                        	{volist name="banner" id="vo"}
                             <li style="display: block;">
-                                <a href="#" title="南沙时间银行现场会"  target="_blank"><img src="__STATIC__/index/images/1498829186171轮播图.jpg" width="666" height="280"/></a>
+                                <a href="{$vo.url}" title="南沙时间银行现场会"  target="_blank"><img src="{$vo.image}" width="666" height="280"/></a>
                             </li>
-                            <li style="display: block;">
-                                <a href="#" title="南沙时间银行现场会"  target="_blank"><img src="__STATIC__/index/images/1498829186171轮播图.jpg" width="666" height="280"/></a>
-                            </li>
-                            <li style="display: block;">
-                                <a href="#" title="南沙时间银行现场会"  target="_blank"><img src="__STATIC__/index/images/1498829186171轮播图.jpg" width="666" height="280"/></a>
-                            </li>
-                            <li style="display: block;">
-                                <a href="#" title="南沙时间银行现场会"  target="_blank"><img src="__STATIC__/index/images/1498829186171轮播图.jpg" width="666" height="280"/></a>
-                            </li>
-                            <li style="display: block;">
-                                <a href="#" title="南沙时间银行现场会"  target="_blank"><img src="__STATIC__/index/images/1498829186171轮播图.jpg" width="666" height="280"/></a>
-                            </li>
-                            <li style="display: block;">
-                                <a href="#" title="南沙时间银行现场会"  target="_blank"><img src="__STATIC__/index/images/1498829186171轮播图.jpg" width="666" height="280"/></a>
-                            </li>
-
+                      		{/volist}
                         </ul>
                     </div>
                         <script type="text/javascript">
@@ -816,21 +579,18 @@
                     <li class="sbjg"><a href="#">优秀团体</a></li>
                     <li><a href="#">会员风采</a></li>
                 </ul>
-                <a href="/timebank/article/front/indexArtByPro.action?programaId=68&pageNo=1&pageSize=6" class="gd">更多>></a> </div>        <div class="yg_photo" id="hyfq" >
+                <a href="{:url('member/index')}" class="gd">更多>></a> </div>        <div class="yg_photo" id="hyfq" >
                 <div id="demo">
                     <div id="indemo">
                         <div id="demo1"> <ul>
-                            <li><a href="/68/20170629163404_505.html"><img src="__STATIC__/index/images/20170629164952.jpg" width="146" height="160" border="0" /></a><p><a href="/68/20170629163404_505.html">何爱卫</a></p>
+                        	{volist name="member" id="vo"}
+                            <li>
+                            	<a href="{:url('member/detail',['id'=>$vo.id])}">
+                            		<img src="{$vo.image}" width="146" height="160" border="0" />
+                            	</a>
+                            	<p><a href="{:url('member/detail',['id'=>$vo.id])}">{$vo.name}</a></p>
                             </li>
-                            <li><a href="/68/20170629163202_504.html"><img src="__STATIC__/index/images/20170629164414.jpg" width="146" height="160" border="0" /></a><p><a href="/68/20170629163202_504.html">林有金</a></p>
-                            </li>
-                            <li><a href="/68/20170629163020_503.html"><img src="__STATIC__/index/images/20170629164009.jpg" width="146" height="160" border="0" /></a><p><a href="/68/20170629163020_503.html">黎洁冰</a></p>
-                            </li>
-                            <li><a href="/68/20151204165907_193.html"><img src="__STATIC__/index/images/20151204165755.jpg" width="146" height="160" border="0" /></a><p><a href="/68/20151204165907_193.html">樊伟强</a></p>
-                            </li>
-                            <li><a href="/68/20151204165432_192.html"><img src="__STATIC__/index/images/20151204165414.jpg" width="146" height="160" border="0" /></a><p><a href="/68/20151204165432_192.html">范亮</a></p>
-                            </li>
-
+                           {/volist}
                         </ul>
                             <script>
                                 $(function(){
@@ -943,26 +703,16 @@
                     </ul>
                 </div>
                 <div style="height:72px;display:none;" id="lmdtContent" class="lmxw_nr"> <ul>
-                    <li>·<a href="/75/20161108102356_367.html">	南沙时间银行招募大量志愿者，献...
+                	{volist name="platform" id="vo"}
+                    <li>·<a href="{:url('platform/detail',['id'=>$vo.id])}">{$vo.title|mb_substr=0,15,'utf-8'}...
                     </a></li>
-
-                    <li>·<a href="/75/20171019164035_613.html">	南沙区委书记蔡朝林莅临南沙时间...
-                    </a></li>
-
-                    <li>·<a href="/75/20171019161925_612.html">	黎明副市长莅临南沙时间银行黄阁...
-                    </a></li>
-
+                    {/volist}
                 </ul> </div>
                 <div id="bddtContent" class="lmxw_nr" style="height:72px;"> <ul>
-                    <li>·<a href="/81/20171011162503_596.html">	广州南沙举办志愿骑行活动 传递...
+                	{volist name="local" id="vo"}
+                    <li>·<a href="{:url('local/detail',['id'=>$vo.id])}">{$vo.title|mb_substr=0,15,'utf-8'}...
                     </a></li>
-
-                    <li>·<a href="/81/20170925112403_592.html">	广州南沙开展文明礼仪小讲堂活动...
-                    </a></li>
-
-                    <li>·<a href="/81/20170925111912_591.html">	广州南沙致力生态文明建设 打造...
-                    </a></li>
-
+					{/volist}
                 </ul> </div>
             </div>
             <!--联盟\本地动态e-->
@@ -1003,16 +753,12 @@
             <!--团队光荣榜s-->
             <div class="lmxw"> <div class="lmxw_top">
                 <h3 class="bxhbr2"> 团队光荣榜 </h3>
-                <a href="/timebank/article/front/indexArtByPro.action?programaId=93&pageNo=1&pageSize=6" class="gd2">更多>></a> </div>        <div class="lmxw_nr" style=" height:120px;"> <ul>
-                <li>·<a href="/93/20160413111509_260.html">	广州南沙产业投资有限公司
+                <a href="{:url('team/index')}" class="gd2">更多>></a> </div>  
+                      <div class="lmxw_nr" style=" height:120px;"> <ul>
+                      {volist name="team" id="vo"}
+                <li>·<a href="{:url('team/detail',['id'=>$vo.id])}">{$vo.company_name|mb_substr=0,15,'utf-8'}
                 </a></li>
-
-                <li>·<a href="/93/20160413104342_254.html">	广州南沙围垦开发公司
-                </a></li>
-
-                <li>·<a href="/93/20160413103802_253.html">	广州南沙资产经营有限公司、广州...
-                </a></li>
-
+				{/volist}
             </ul> </div>
             </div>
             <!--团队光荣榜e-->
@@ -1061,38 +807,15 @@
         <!--慈善项目s-->
         <div class="zxjz lf"> <div class="box1_zxxq_top">
             <h3 class="bxhbr"> 热点项目 </h3>
-            <a href="/timebank/article/front/indexArtByPro.action?programaId=67&pageNo=1&pageSize=6 " class="gd">更多>></a> </div>      <div class="zjjz_nr">  <ul>
+            <a href="{:url('project/index')}" class="gd">更多>></a> </div>      <div class="zjjz_nr">  <ul>
+            {volist name="project" id="vo"}
             <li>
-                <p>·<a href="/67/20170822112744_555.html">
-                    关于“银龄有爱·伴读...
+                <p>·<a href="{:url('project/detail',['id'=>$vo.id])}">
+                    {$vo.title|mb_substr=0,10,'utf-8'}...
                 </a></p>
-                <span>2017-08-22</span>
+                <span>{$vo.time|date="Y-m-d",###}</span>
             </li>
-            <li>
-                <p>·<a href="/67/20170810101331_536.html">
-                    “花城花语，爱心同盟...
-                </a></p>
-                <span>2017-08-10</span>
-            </li>
-            <li>
-                <p>·<a href="/67/20170810095435_535.html">
-                    心手相携，快乐成长
-                </a></p>
-                <span>2017-08-10</span>
-            </li>
-            <li>
-                <p>·<a href="/67/20160413170254_271.html">
-                    践行群众路线，创建幸...
-                </a></p>
-                <span>2016-04-13</span>
-            </li>
-            <li>
-                <p>·<a href="/67/20160413163556_270.html">
-                    端午节“邻里相守、敬...
-                </a></p>
-                <span>2016-04-13</span>
-            </li>
-
+			{/volist}
         </ul> </div>
         </div>
         <!--慈善项目e-->

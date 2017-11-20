@@ -1,0 +1,149 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>时间银行--会员风采</title>
+    <link type="text/css" rel="stylesheet" href="__STATIC__/index/css/index.css" />
+    <link type="text/css" href="css/list.css" rel="__STATIC__/index/stylesheet" />
+    <script type="text/javascript" src="__STATIC__/index/js/jquery-1.7.2.min.js"></script>
+    <style type="text/css">
+
+        /*-----主要内容  s ----*/
+        #main{ width:1100px; margin-left:auto; margin-right:auto; margin-top:10px;}
+        /*-社区动态  s--*/
+        #csxm_left{ width:1098px;  float:left; margin-bottom:10px; border:solid 1px #dbdbdb;}
+        .location{ height:30px; background-color:#f9f9f9;}
+        .location p{ padding-left:5px; padding-top:8px; font-size:12px; color:#444;}
+
+        .csxm_title{ margin-left:auto; margin-right:auto; height:30px; border-bottom:solid 2px #ff9300; margin-bottom:10px;}
+        .csxm_title p{ font-size:16px; color:#c75f02; padding-left:10px; padding-top:7px; font-family:"Microsoft Yahei Font"; font-weight:700;}
+
+        .cs_list{ width:998px; height:175px; margin-top:5px; margin-left:auto; margin-right:auto; border-bottom:dashed 1px #dbdbdb;}
+        .list_title{ font-size:18px;}
+        .jj_cs{ font-size:12px; line-height:25px; color:#444; padding-top:5px;}
+        .jj_cs a{ color:#FF0000;}
+        .sjxx{ font-size:12px; color:#999; padding-top:15px;}
+
+        /*具体社区动态*/
+        .csxm_1{ width:404px; float:left;}
+        .csxm_2{ width:404px; float:right;}
+        .cs_title{ font-size:14px; color:#c75f02; padding-top:20px;}
+        .cssj{ font-size:12px; color:#444; line-height:20px; padding-top:15px;}
+        .cssj a{ color:#f00;}
+
+        /*列表分页*/
+        .fen_page{ height:30px; width:840px; margin-left:auto; margin-right:auto;  margin-top:20px; margin-bottom:20px;}
+        /*-社区动态  e--*/
+
+        /*-右边  s--*/
+        #csxm_right{ width:230px; float:right;}
+
+    </style>
+    <script type="text/javascript">
+        parent.jQuery("#yc_menu1").hide();
+        function goDetail(noticeId) {
+            window.open("/timebank/welcome/frontWelcome.action?noticeId="+noticeId,'新闻详细','');
+        }
+    </script>
+</head>
+
+<body>
+<div id="container">
+    <!--tops-->
+    <script type="text/javascript">
+        //登录
+        function tologin() {
+            var url = parent.window.location.href;
+            if (url.indexOf("frontWelcome") > 0) {
+                url = "/timebank/welcome/front/mybank.action";
+            }
+            top.window.location = "/timebank/welcome/frontLogin.action?returnUrl=" + url;
+        }
+        //跳转
+        function goAction(action, target){
+            if(target == 1){
+                window.open(action);
+            }else{
+                top.window.location.href = action;
+            }
+        }
+        //显示手机二维码
+
+        function showQRCode(){
+            $("#code").show();
+        }
+        //隐藏手机二维码
+
+        function hideQRCode(){
+            $("#code").hide();
+        }
+    </script>
+    {include file="public/header"}
+    <!--主要内容区    s--->
+    <div id="main">
+
+        <!--csxm_left    s--->
+        <div id="csxm_left" style="margin-bottom:10px;">
+            <div class="csxm_title"><p>会员风采</p></div>
+            <p align="center" style="padding-bottom:12px;">
+
+                <!--一般栏目-->
+            <div 0 >
+                <div style="text-align:center;">
+                    <img src="http://www.nstimebank.org.cn/images/yxyg-banner.jpg" alt="" /><span style="line-height:1.5;"></span>
+                </div>
+            </div>
+            </p>
+            <!--慈善列表  s-->
+            <div class="cs_list">
+                <!--具体项目  s-->
+                {volist name="local" id="vo" key="k"}
+                <div {if($k%2==0)}class="csxm_2"{else /}class="csxm_1"{/if}>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="179" height="163">
+                                <a href="{:url('member/detail',['id'=>$vo.id])}" target="_blank">
+                                    <img src="{$vo.image}" width="164" height="143" /></a></td>
+                            <td valign="top">
+                                <p class="cs_title">{$vo.name}</p>
+                                <p class="cssj">
+									{$vo.evaluate}
+                                    <a href="{:url('member/detail',['id'=>$vo.id])}"
+                                       target="_blank">[详细]</a>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                {/volist}
+                <!--具体项目  e-->
+            </div>
+            <!--慈善列表  e-->
+
+
+            <!--分页  s-->
+            <div class="fen_page">
+               {:pagination($local)}
+            </div>
+            <!--分页  e-->
+        </div>
+        <!--csxm_left    e--->
+
+    </div>
+</div>
+<!--主要内容区    e--->
+{include file="public/footer"}
+<script>
+    if(screen.width>1100){
+
+        //document.getElementById("foot").style.width=screen.width-21;
+    }
+</script>
+<!--版权信息    e--->	    <!--版权信息    e--->
+</div>
+<script type="text/javascript">
+    jQuery("#sub_menu").hide();
+</script>
+</body>
+</html>

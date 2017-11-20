@@ -12,7 +12,7 @@ class Base extends \think\Controller
     //获取session
     public function getLoginUser(){
         if(!$this->account){
-            $this->account = session('tel','','bank');
+            $this->account = session('tel','','dake');
         }
         return $this->account;
     }
